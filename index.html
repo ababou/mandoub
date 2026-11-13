@@ -24,6 +24,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
 img,svg{max-width:100%}
+body{overflow-x:hidden;position:relative;width:100%;max-width:100vw}
 body{font-family:'Cairo',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:16px}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1040px;margin:0 auto;padding:0 16px}
@@ -88,7 +89,7 @@ textarea{min-height:120px;resize:vertical}
 .full{grid-column:1/-1}
 .chk{display:flex;gap:10px;align-items:flex-start;font-size:.9rem}
 .chk input{width:20px;height:20px;margin-top:5px;flex:none}
-.hp{position:absolute;left:-9999px;opacity:0}
+.hp{position:absolute;width:0;height:0;opacity:0;overflow:hidden;pointer-events:none;border:0;padding:0}
 .status{margin-top:12px;padding:12px;border-radius:12px;display:none;font-weight:600}
 .status.ok{display:block;background:#dcfce7;color:#14532d}
 .status.err{display:block;background:#fee2e2;color:#7f1d1d}
@@ -153,7 +154,7 @@ const CONFIG = {
   role: "مندوب التعاضدية العامة لموظفي الإدارات العمومية (إلى نجحنا انشاء الله الى مكتابش نسلموها إلى أحد الزملاء)",
   org: "لفائدة موظفي جماعة الرباط",
   photo: "",                                  // مثال: "photo.jpg" (حط الصورة فنفس المجلد) أو خليه فارغ
-  whatsapp: "+21266130944",                   // بصيغة دولية بلا + ولا 0 فالبداية
+  whatsapp: "21266130944",                   // بصيغة دولية بلا + ولا 0 فالبداية
   phone: "+21266130944",
   email: "mohamedababou@gmail.com",
   telegram: "",                               // مثال: "username" (بلا @) أو خليه فارغ
@@ -388,7 +389,6 @@ const CONFIG = {
 <a class="fab" id="fab" target="_blank" rel="noopener">💬 واتساب</a>
 <div class="toast" id="toast"></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
 (function(){
   const C = CONFIG, $ = id => document.getElementById(id);
@@ -557,8 +557,16 @@ const CONFIG = {
     const b = $('nativeShare'); b.hidden = false;
     b.addEventListener('click', () => navigator.share({title:'بوابة التواصل مع المندوب', text:msg, url:siteUrl}).catch(()=>{}));
   }
-  try { new QRCode($('qr'), {text: siteUrl, width: 180, height: 180, correctLevel: QRCode.CorrectLevel.M}); }
-  catch(e){ $('qr').textContent = 'QR غير متوفر'; }
+  const qrScript = document.createElement('script');
+  qrScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js';
+  qrScript.async = true;
+  qrScript.onload = () => {
+    try { new QRCode($('qr'), {text: siteUrl, width: 180, height: 180, correctLevel: QRCode.CorrectLevel.M}); }
+    catch(e){ $('qr').textContent = 'QR غير متوفر'; }
+  };
+  qrScript.onerror = () => { $('qr').textContent = 'QR غير متوفر'; };
+  document.body.appendChild(qrScript);
+  window.scrollTo(0, 0);
 
   // Save vCard
   $('saveContact').addEventListener('click', (e) => {
