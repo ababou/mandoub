@@ -91,30 +91,31 @@
 
   </div>
 
-  <div class="hero-photo">
+  
+<div class="hero-photo">
+  <div class="photo-frame">
 
-    <div class="photo-frame">
+    <img
+      id="candidate-photo"
+      src="assets/candidate.jpg"
+      alt="محمد اعبابو"
+      onerror="this.style.display='none'; document.getElementById('candidate-placeholder').style.display='flex';"
+    >
 
-      <img
-        src="assets/candidate.jpg"
-        alt="صورة محمد اعبابو"
-        onerror="this.style.display='none';document.getElementById('candidate-placeholder').style.display='flex';"
-      >
+    <div class="photo-placeholder" id="candidate-placeholder">
+      <span>م ا</span>
+      <b>محمد اعبابو</b>
+      <small>المرشح رقم 14</small>
+    </div>
 
-      <div class="photo-placeholder" id="candidate-placeholder">
-        <span>م ا</span>
-        <b>محمد اعبابو</b>
-        <small>المرشح رقم 14</small>
-      </div>
-
-      <div class="photo-label">
-        <b>محمد اعبابو</b>
-        <span>الترتيب رقم 14</span>
-      </div>
-
+    <div class="photo-label">
+      <b>محمد اعبابو</b>
+      <span>الترتيب رقم 14</span>
     </div>
 
   </div>
+</div>
+
 
 </section>
 
