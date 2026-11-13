@@ -22,7 +22,8 @@
   :root{--bg:#0b1514; --card:#12201f; --text:#e5f2f0; --muted:#9db3b0; --line:#1f3331; --brand-l:#12302d; --shadow:0 6px 24px rgba(0,0,0,.4)}
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
+img,svg{max-width:100%}
 body{font-family:'Cairo',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:16px}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1040px;margin:0 auto;padding:0 16px}
@@ -39,7 +40,7 @@ nav a:hover{background:var(--brand-l);color:var(--brand)}
 .hero h1{font-size:clamp(1.6rem,5vw,2.6rem);font-weight:800;line-height:1.4}
 .hero p{opacity:.92;max-width:640px;margin-top:10px}
 .hero .who{margin-top:18px;display:flex;align-items:center;gap:14px}
-.avatar{width:64px;height:64px;border-radius:50%;background:#fff;color:var(--brand);display:grid;place-items:center;font-size:1.6rem;font-weight:800;overflow:hidden;flex:none}
+.avatar{width:88px;height:88px;border-radius:50%;background:#fff;color:var(--brand);display:grid;place-items:center;font-size:1.6rem;font-weight:800;overflow:hidden;flex:none;border:3px solid rgba(255,255,255,.65);box-shadow:0 6px 20px rgba(0,0,0,.25)}
 .avatar img{width:100%;height:100%;object-fit:cover}
 .who b{display:block;font-size:1.15rem}
 .who span{opacity:.85;font-size:.92rem}
@@ -106,6 +107,38 @@ footer a{color:#7ee0d3;text-decoration:underline}
 .fab{position:fixed;bottom:18px;inset-inline-start:18px;z-index:60;background:var(--wa);color:#073b1d;border-radius:999px;padding:12px 18px;font-weight:800;display:flex;gap:8px;align-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25)}
 .toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);background:#111827;color:#fff;padding:10px 18px;border-radius:12px;opacity:0;pointer-events:none;transition:.25s;z-index:99}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media (max-width:640px){
+  body{font-size:15.5px}
+  .wrap{padding:0 14px}
+  header.top .wrap{height:auto;flex-direction:column;align-items:stretch;gap:2px;padding-top:8px;padding-bottom:6px}
+  .brand{justify-content:center;font-size:1rem}
+  nav{padding:2px 0 4px;-webkit-overflow-scrolling:touch}
+  nav a{padding:6px 11px;font-size:.88rem;background:var(--bg)}
+  .hero{padding:26px 0 64px;text-align:center}
+  .hero h1{font-size:1.45rem}
+  .hero p{margin-inline:auto;font-size:.95rem}
+  .hero .who{flex-direction:column;text-align:center;gap:8px}
+  .avatar{width:112px;height:112px}
+  .cta{flex-direction:column}
+  .cta .btn{width:100%}
+  .pull{margin-top:-44px}
+  section{padding:30px 0}
+  .sec-title{font-size:1.3rem}
+  .sec-sub{margin-bottom:16px;font-size:.92rem}
+  .g-contact,.g-3,.share,form .fg{grid-template-columns:1fr}
+  .card{padding:14px}
+  .c-card .row .btn{flex:1}
+  .tabs .tab{flex:1 1 100%;text-align:center}
+  .news .item{flex-direction:column;gap:6px}
+  .hours div{flex-direction:column;gap:0}
+  .qr{max-width:100%}
+  .fab{inset-inline-start:12px;bottom:12px;padding:11px 15px}
+  .toast{width:max-content;max-width:90vw;text-align:center}
+}
+@media (max-width:360px){
+  .hero h1{font-size:1.3rem}
+  .btn{padding:11px 14px}
+}
 @media print{header.top,.fab,.cta,form{display:none}}
 </style>
 </head>
@@ -378,8 +411,18 @@ const CONFIG = {
   $('hOrg').textContent = C.org;
   $('yr').textContent = new Date().getFullYear();
   const av = $('avatar');
-  if (C.photo) av.innerHTML = `<img src="${esc(C.photo)}" alt="${esc(C.name)}">`;
-  else av.textContent = (C.name.trim()[0] || '👤');
+  const DEFAULT_PHOTO = 'data:image/svg+xml;utf8,' + enc(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">' +
+    '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14b8a6"/><stop offset="1" stop-color="#0f766e"/></linearGradient></defs>' +
+    '<rect width="200" height="200" fill="url(#g)"/>' +
+    '<circle cx="100" cy="78" r="38" fill="#ffffff" opacity=".95"/>' +
+    '<path d="M28 200c0-46 32-76 72-76s72 30 72 76z" fill="#ffffff" opacity=".95"/></svg>');
+  const img = new Image();
+  img.alt = C.name; img.width = 112; img.height = 112;
+  img.style.cssText = 'width:100%;height:100%;object-fit:cover';
+  img.onerror = () => { img.onerror = null; img.src = DEFAULT_PHOTO; };
+  img.src = C.photo || DEFAULT_PHOTO;
+  av.appendChild(img);
   $('ctaWa').href = waLink(welcome);
   $('fab').href = waLink(welcome);
   $('ctaCall').href = `tel:${C.phone}`;
