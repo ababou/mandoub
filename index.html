@@ -3,384 +3,691 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#103c32">
-  <meta name="description" content="محمد اعبابو، المرشح رقم 14 لانتداب منخرطي التعاضدية العامة لموظفي الإدارات العمومية. الإنصات والتوجيه والمواكبة والشفافية.">
-  <title>محمد اعبابو | المرشح رقم 14</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09271f">
+
+  <meta name="description" content="محمد اعبابو، المرشح رقم 14 لمهمة مندوب منخرطي التعاضدية العامة لموظفي الإدارات العمومية.">
+
+  <title>محمد اعبابو | المرشح رقم 14 - صوت القرب</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="site-header">
-  <div class="container nav-container">
+  <!-- HEADER -->
+  <header class="header">
     <a href="#home" class="brand">
       <span class="brand-number">14</span>
-      <span>
-        <strong>محمد اعبابو</strong>
-        <small>صوت المنخرط ومسؤولية التمثيل</small>
+      <span class="brand-text">
+        <b>صوت القرب</b>
+        <small>الإنصات · التوجيه · المواكبة</small>
       </span>
     </a>
 
-    <button class="menu-toggle" id="menu-toggle" aria-label="فتح القائمة">
-      <span></span><span></span><span></span>
+    <button class="menu-toggle"
+            aria-label="فتح القائمة"
+            aria-expanded="false"
+            aria-controls="main-nav">
+      ☰
     </button>
 
-    <nav class="main-nav" id="main-nav">
+    <nav id="main-nav">
       <a href="#home">الرئيسية</a>
-      <a href="#about">من أنا؟</a>
+      <a href="#about">عن المرشح</a>
       <a href="#program">برنامج العمل</a>
       <a href="#services">دليل الخدمات</a>
       <a href="#campaign">فضاء الحملة</a>
+      <a href="#faq">أسئلة شائعة</a>
       <a href="#contact" class="nav-contact">تواصل معنا</a>
     </nav>
-  </div>
-</header>
+  </header>
 
-<main>
 
-<section class="hero" id="home">
-  <div class="container hero-grid">
+  <!-- HERO -->
+  <main>
 
-    <div class="hero-content">
-      <span class="eyebrow">انتداب ممثلي المنخرطين</span>
+    <section class="hero" id="home">
 
-      <h1>
-        صوتك أمانة،
-        <span>والتمثيل مسؤولية</span>
-      </h1>
+      <div class="hero-content">
+        <span class="eyebrow">انتداب منخرطي التعاضدية</span>
 
-      <p class="hero-description">
-        ترشيحي هو التزام بالإنصات لانشغالات المنخرطين،
-        والعمل على إيصال صوتهم، وتسهيل وصولهم إلى المعلومة
-        والخدمات المتاحة.
-      </p>
+        <h1>محمد اعبابو</h1>
 
-      <div class="candidate-name">
-        <h2>محمد اعبابو</h2>
-        <p>مرشح لانتداب منخرطي التعاضدية العامة لموظفي الإدارات العمومية</p>
-      </div>
+        <h2>صوت القرب... ومسؤولية الإنصات</h2>
 
-      <div class="hero-actions">
-        <a href="#program" class="btn btn-gold">اكتشف برنامج العمل</a>
-        <a href="#about" class="btn btn-outline">تعرف عليّ</a>
-      </div>
-    </div>
-
-    <div class="hero-photo">
-      <div class="photo-frame">
-
-        <img
-          src="assets/candidate.jpg"
-          alt="صورة المرشح محمد اعبابو"
-          onerror="this.hidden=true; document.getElementById('candidate-placeholder').hidden=false;"
-        >
-
-        <div class="photo-placeholder" id="candidate-placeholder" hidden>
-          <span>م ا</span>
-          <b>محمد اعبابو</b>
-          <small>المرشح رقم 14</small>
+        <div class="candidate-number">
+          <strong>14</strong>
+          <span>رقم الترتيب الانتخابي</span>
         </div>
 
-        <div class="photo-label">
-          <b>محمد اعبابو</b>
-          <span>الترتيب رقم 14</span>
+        <p class="hero-description">
+          ترشيحي هو التزام بالإنصات لانشغالات الزميلات والزملاء،
+          والتعريف بحقوق المنخرطين، والمساهمة في إيصال صوتهم
+          ومواكبة ملفاتهم في حدود الاختصاصات والصلاحيات المتاحة.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#program" class="btn gold-button">اكتشف برنامج العمل</a>
+          <a href="#about" class="btn outline-button">تعرف على المرشح</a>
         </div>
 
+        <p class="hero-note">
+          موقع تعريفي مستقل، وليس موقعاً رسمياً للتعاضدية.
+        </p>
       </div>
-    </div>
 
-  </div>
 
-  <div class="hero-decoration"></div>
-</section>
+      <!-- صورة المرشح -->
+      <div class="hero-photo">
+        <div class="photo-frame">
 
-<section class="values-section">
-  <div class="container values-grid">
-    <article class="value-card">
-      <span class="value-icon">01</span>
-      <h3>الإنصات</h3>
-      <p>الاستماع لانشغالات المنخرطين وفهم انتظاراتهم.</p>
-    </article>
+          <img
+            src="assets/candidate.jpg"
+            alt="صورة محمد اعبابو"
+            onerror="this.hidden=true; document.getElementById('candidate-placeholder').hidden=false;"
+          >
 
-    <article class="value-card">
-      <span class="value-icon">02</span>
-      <h3>التوجيه</h3>
-      <p>تقريب المعلومة وتوضيح المساطر والخدمات.</p>
-    </article>
+          <div class="photo-placeholder" id="candidate-placeholder" hidden>
+            <span>م ا</span>
+            <b>محمد اعبابو</b>
+            <small>المرشح رقم 14</small>
+          </div>
 
-    <article class="value-card">
-      <span class="value-icon">03</span>
-      <h3>المواكبة</h3>
-      <p>المساعدة في تتبع الانشغالات وتوجيهها للجهات المختصة.</p>
-    </article>
+          <div class="photo-label">
+            <b>محمد اعبابو</b>
+            <span>الترتيب رقم 14</span>
+          </div>
 
-    <article class="value-card">
-      <span class="value-icon">04</span>
-      <h3>الشفافية</h3>
-      <p>التواصل الواضح والالتزام بالمسؤولية.</p>
-    </article>
-  </div>
-</section>
+        </div>
+      </div>
 
-<section class="section" id="about">
-  <div class="container about-grid">
-    <div class="section-heading">
-      <span class="eyebrow">من أنا؟</span>
-      <h2>التمثيل ليس امتيازاً، بل <span>مسؤولية</span></h2>
-    </div>
+    </section>
 
-    <div class="about-content">
+
+    <!-- VALUES -->
+    <section class="values">
+      <div>
+        <b>الإنصات</b>
+        <span>الاستماع لانشغالات المنخرطين</span>
+      </div>
+
+      <div>
+        <b>التوجيه</b>
+        <span>توضيح المساطر والمعلومات</span>
+      </div>
+
+      <div>
+        <b>المواكبة</b>
+        <span>متابعة الملفات والانشغالات</span>
+      </div>
+
+      <div>
+        <b>الشفافية</b>
+        <span>وضوح في التواصل والالتزامات</span>
+      </div>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+
+      <div class="section-heading">
+        <span>01 / من أنا؟</span>
+        <h2>قريب من المنخرط... ومسؤول أمامه</h2>
+        <p>
+          التعريف بالمرشح وبالدور الذي يطمح إلى القيام به
+          دفاعاً عن مصالح المنخرطين.
+        </p>
+      </div>
+
+      <div class="about-box">
+
+        <div class="about-main">
+          <h3>محمد اعبابو</h3>
+
+          <p>
+            أترشح لمهمة مندوب منخرطي التعاضدية العامة لموظفي
+            الإدارات العمومية، إيماناً مني بأهمية التواصل
+            المباشر والإنصات لانشغالات الزميلات والزملاء.
+          </p>
+
+          <p>
+            أطمح إلى أن أكون حلقة وصل مسؤولة بين المنخرطين
+            والمؤسسات المعنية، من خلال التعريف بالخدمات
+            المتاحة، والتوجيه، والمواكبة، ونقل الانشغالات
+            بكل جدية ووضوح.
+          </p>
+        </div>
+
+        <div class="about-points">
+
+          <article>
+            <b>الإنصات قبل كل شيء</b>
+            <p>فهم الانشغال والاستماع إلى صاحبه دون أحكام مسبقة.</p>
+          </article>
+
+          <article>
+            <b>المعلومة الصحيحة</b>
+            <p>الاعتماد على المصادر الرسمية وتجنب الوعود غير الواقعية.</p>
+          </article>
+
+          <article>
+            <b>المسؤولية والوضوح</b>
+            <p>توضيح ما يمكن القيام به وما يدخل خارج نطاق الصلاحيات.</p>
+          </article>
+
+          <article>
+            <b>الاستمرارية</b>
+            <p>جعل خدمة المنخرطين عملاً مستمراً وليس مجرد شعار انتخابي.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- PROGRAM -->
+    <section class="section dark-section" id="program">
+
+      <div class="section-heading">
+        <span>02 / برنامج العمل</span>
+        <h2>التزامات عملية... لا وعود انتخابية</h2>
+        <p>
+          برنامج يرتكز على التواصل، والتوجيه، والمواكبة،
+          والعمل المسؤول في حدود الاختصاصات.
+        </p>
+      </div>
+
+      <div class="program-grid">
+
+        <article class="program-card">
+          <span>01</span>
+          <h3>الإنصات والتواصل</h3>
+          <p>
+            فتح قنوات للتواصل مع المنخرطين والاستماع
+            إلى مشاكلهم ومقترحاتهم.
+          </p>
+        </article>
+
+        <article class="program-card">
+          <span>02</span>
+          <h3>التوجيه الإداري</h3>
+          <p>
+            مساعدة المنخرطين على فهم المساطر والوثائق
+            المطلوبة ومصادر المعلومات الرسمية.
+          </p>
+        </article>
+
+        <article class="program-card">
+          <span>03</span>
+          <h3>مواكبة الملفات</h3>
+          <p>
+            تتبع الانشغالات والملفات المطروحة وتوجيهها
+            إلى الجهات المختصة.
+          </p>
+        </article>
+
+        <article class="program-card">
+          <span>04</span>
+          <h3>التعريف بالخدمات</h3>
+          <p>
+            تقريب المعلومات المتعلقة بالخدمات الصحية
+            والاجتماعية والتعاضدية.
+          </p>
+        </article>
+
+        <article class="program-card">
+          <span>05</span>
+          <h3>الشفافية والتواصل</h3>
+          <p>
+            التواصل بوضوح حول الملفات والمستجدات
+            والإكراهات التي تواجه المنخرطين.
+          </p>
+        </article>
+
+        <article class="program-card">
+          <span>06</span>
+          <h3>استمرارية المبادرة</h3>
+          <p>
+            إذا لم أحظ بثقة الناخبين، سأحرص على استمرارية
+            هذه المبادرة وتسليم المشروع لزميل آخر بعد
+            الاتفاق معه، حتى لا يتوقف العمل من أجل المنخرطين.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+
+      <div class="section-heading">
+        <span>03 / دليل الخدمات</span>
+        <h2>معلومات تساعدك على معرفة حقوقك</h2>
+        <p>
+          روابط للتعرف على بعض الخدمات والملفات التي تهم المنخرطين.
+          المرجع النهائي هو الموقع الرسمي للتعاضدية.
+        </p>
+      </div>
+
+      <div class="service-grid">
+
+        <a class="service-card"
+           href="https://www.mgpap.org.ma/index.php/fr/"
+           target="_blank" rel="noopener">
+          <span class="service-icon">01</span>
+          <b>الانخراط والوضعية الإدارية</b>
+          <small>معلومات حول الانخراط والملفات الإدارية.</small>
+          <span class="service-arrow">الموقع الرسمي ↗</span>
+        </a>
+
+        <a class="service-card"
+           href="https://www.mgpap.org.ma/index.php/fr/"
+           target="_blank" rel="noopener">
+          <span class="service-icon">02</span>
+          <b>ملف التقاعد</b>
+          <small>التعرف على الخدمات المرتبطة بالمتقاعدين.</small>
+          <span class="service-arrow">الموقع الرسمي ↗</span>
+        </a>
+
+        <a class="service-card"
+           href="https://www.mgpap.org.ma/index.php/fr/"
+           target="_blank" rel="noopener">
+          <span class="service-icon">03</span>
+          <b>ملفات الوفاة</b>
+          <small>التوجيه بشأن الملفات المتعلقة بحالة الوفاة.</small>
+          <span class="service-arrow">الموقع الرسمي ↗</span>
+        </a>
+
+        <a class="service-card"
+           href="https://www.mgpap.org.ma/index.php/fr/"
+           target="_blank" rel="noopener">
+          <span class="service-icon">04</span>
+          <b>المنحة المدرسية</b>
+          <small>معلومات حول المنح والخدمات الاجتماعية.</small>
+          <span class="service-arrow">الموقع الرسمي ↗</span>
+        </a>
+
+        <a class="service-card"
+           href="https://www.mgpap.org.ma/index.php/fr/"
+           target="_blank" rel="noopener">
+          <span class="service-icon">05</span>
+          <b>مراكز التشخيص</b>
+          <small>التعرف على الخدمات الصحية المتاحة.</small>
+          <span class="service-arrow">الموقع الرسمي ↗</span>
+        </a>
+
+        <a class="service-card"
+           href="https://www.mgpap.org.ma/index.php/fr/"
+           target="_blank" rel="noopener">
+          <span class="service-icon">06</span>
+          <b>طب الأسنان</b>
+          <small>معلومات حول خدمات العناية بالأسنان.</small>
+          <span class="service-arrow">الموقع الرسمي ↗</span>
+        </a>
+
+        <a class="service-card"
+           href="https://www.mgpap.org.ma/index.php/fr/"
+           target="_blank" rel="noopener">
+          <span class="service-icon">07</span>
+          <b>خدمات البصريات</b>
+          <small>التعرف على الخدمات المتعلقة بالبصريات.</small>
+          <span class="service-arrow">الموقع الرسمي ↗</span>
+        </a>
+
+        <a class="service-card"
+           href="https://www.mgpap.org.ma/index.php/fr/"
+           target="_blank" rel="noopener">
+          <span class="service-icon">08</span>
+          <b>مراكز أمل</b>
+          <small>معلومات حول المراكز والخدمات المتاحة.</small>
+          <span class="service-arrow">الموقع الرسمي ↗</span>
+        </a>
+
+      </div>
+
+      <div class="official-box">
+        <div>
+          <b>للمعلومات الرسمية والمحيّنة</b>
+          <p>
+            يرجى الرجوع إلى الموقع الرسمي للتعاضدية
+            للتأكد من الشروط والمساطر والخدمات.
+          </p>
+        </div>
+
+        <a href="https://www.mgpap.org.ma/index.php/fr/"
+           target="_blank" rel="noopener"
+           class="btn gold-button">
+          زيارة موقع التعاضدية ↗
+        </a>
+      </div>
+
+    </section>
+
+
+    <!-- CAMPAIGN -->
+    <section class="section campaign-section" id="campaign">
+
+      <div class="section-heading">
+        <span>04 / فضاء الحملة</span>
+        <h2>تعرف على الحملة ومضامينها</h2>
+        <p>
+          بعض المواد التعريفية والفيديوهات المرتبطة بالترشيح.
+        </p>
+      </div>
+
+
+      <!-- FLYERS -->
+      <div class="media-heading">
+        <div>
+          <span>المطبوعات</span>
+          <h3>المواد التعريفية</h3>
+        </div>
+        <p>اضغط على الصورة لمشاهدتها.</p>
+      </div>
+
+      <div class="flyer-grid">
+
+        <article class="flyer-card">
+          <a href="assets/flayer1.jpg"
+             target="_blank"
+             class="flyer-link">
+
+            <img
+              src="assets/flayer1.jpg"
+              alt="المطوية التعريفية الأولى"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+            >
+
+            <div class="flyer-placeholder">
+              <span>14</span>
+              <b>المطوية التعريفية</b>
+              <small>محمد اعبابو</small>
+            </div>
+          </a>
+
+          <div class="flyer-info">
+            <b>المطوية الأولى</b>
+            <a href="assets/flayer1.jpg" target="_blank">مشاهدة ↗</a>
+          </div>
+        </article>
+
+
+        <article class="flyer-card">
+          <a href="assets/flayer2.jpg"
+             target="_blank"
+             class="flyer-link">
+
+            <img
+              src="assets/flayer2.jpg"
+              alt="المطوية التعريفية الثانية"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+            >
+
+            <div class="flyer-placeholder second">
+              <span>14</span>
+              <b>برنامج العمل</b>
+              <small>محمد اعبابو</small>
+            </div>
+          </a>
+
+          <div class="flyer-info">
+            <b>المطوية الثانية</b>
+            <a href="assets/flayer2.jpg" target="_blank">مشاهدة ↗</a>
+          </div>
+        </article>
+
+      </div>
+
+
+      <!-- VIDEOS -->
+      <div class="media-heading video-heading">
+        <div>
+          <span>الفيديوهات</span>
+          <h3>شاهد وتابع</h3>
+        </div>
+        <p>فيديوهات تعريفية مرتبطة بالحملة.</p>
+      </div>
+
+      <div class="video-grid">
+
+        <article class="video-card">
+
+          <div class="video-frame short-video">
+            <iframe
+              src="https://www.youtube.com/embed/PltwsJNZ58U"
+              title="فيديو الحملة الانتخابية"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="video-info">
+            <span>الفيديو الأول</span>
+            <h3>رسالة الحملة</h3>
+            <a href="https://youtube.com/shorts/PltwsJNZ58U"
+               target="_blank" rel="noopener">
+              المشاهدة على يوتيوب ↗
+            </a>
+          </div>
+
+        </article>
+
+
+        <article class="video-card">
+
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/4A7sWfkvDpc"
+              title="فيديو تعريفي بالترشيح"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="video-info">
+            <span>الفيديو الثاني</span>
+            <h3>رسالة إلى الزميلات والزملاء</h3>
+            <a href="https://youtu.be/4A7sWfkvDpc"
+               target="_blank" rel="noopener">
+              المشاهدة على يوتيوب ↗
+            </a>
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <div class="youtube-banner">
+        <div>
+          <b>تابعوا المستجدات والمواد التعريفية</b>
+          <p>ساهموا في نشر المعلومة والتعريف بالمبادرة.</p>
+        </div>
+
+        <a href="https://youtube.com/shorts/PltwsJNZ58U"
+           target="_blank" rel="noopener"
+           class="btn gold-button">
+          مشاهدة الفيديوهات ↗
+        </a>
+      </div>
+
+    </section>
+
+
+    <!-- FOLLOW UP -->
+    <section class="section dark-section" id="follow-up">
+
+      <div class="section-heading">
+        <span>05 / كيف أواكب انشغالك؟</span>
+        <h2>من الاستماع إلى التوجيه والمتابعة</h2>
+        <p>
+          الهدف هو تسهيل التواصل ومساعدة المنخرط على معرفة
+          المسار المناسب لانشغاله.
+        </p>
+      </div>
+
+      <div class="steps-grid">
+
+        <article>
+          <strong>1</strong>
+          <b>التواصل</b>
+          <p>الاستماع إلى الانشغال وفهم تفاصيله.</p>
+        </article>
+
+        <article>
+          <strong>2</strong>
+          <b>تحديد الموضوع</b>
+          <p>التعرف على طبيعة الملف والمصلحة المعنية.</p>
+        </article>
+
+        <article>
+          <strong>3</strong>
+          <b>التوجيه</b>
+          <p>تقديم المعلومة وتوضيح المسطرة المتاحة.</p>
+        </article>
+
+        <article>
+          <strong>4</strong>
+          <b>المتابعة</b>
+          <p>مواكبة الانشغال في حدود الإمكانات والصلاحيات.</p>
+        </article>
+
+      </div>
+
+      <div class="warning-box">
+        <b>التزام بالوضوح والمسؤولية</b>
+        <p>
+          المندوب ليس إدارة تنفيذية ولا يملك صلاحية اتخاذ
+          القرارات الإدارية أو ضمان قبول الملفات. دوره هو
+          الإنصات والتوجيه ونقل الانشغالات والمساهمة في
+          تتبعها عبر القنوات المتاحة.
+        </p>
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+
+      <div class="section-heading">
+        <span>06 / أسئلة شائعة</span>
+        <h2>معلومات تهمك</h2>
+        <p>أجوبة واضحة حول الموقع والترشيح ومهمة المندوب.</p>
+      </div>
+
+      <div class="faq-list">
+
+        <details>
+          <summary>هل هذا موقع رسمي للتعاضدية؟</summary>
+          <p>
+            لا، هذا موقع تعريفي مستقل خاص بالمرشح محمد اعبابو،
+            ولا يمثل الموقع الرسمي للتعاضدية.
+          </p>
+        </details>
+
+        <details>
+          <summary>من أين يمكن الحصول على المعلومات الرسمية؟</summary>
+          <p>
+            المرجع الرسمي للمعلومات والخدمات هو موقع
+            التعاضدية العامة لموظفي الإدارات العمومية.
+          </p>
+        </details>
+
+        <details>
+          <summary>هل يستطيع المندوب ضمان حل جميع الملفات؟</summary>
+          <p>
+            لا يمكن ضمان نتيجة أي ملف، لأن القرار يرجع
+            إلى الجهات المختصة. دور المندوب هو الإنصات
+            والتوجيه والمواكبة ونقل الانشغالات.
+          </p>
+        </details>
+
+        <details>
+          <summary>هل يجب إرسال الوثائق الشخصية عبر الموقع؟</summary>
+          <p>
+            لا ترسل وثائقك الشخصية أو بياناتك الحساسة
+            عبر قنوات غير رسمية. استعمل القنوات المعتمدة
+            لدى الجهات المختصة.
+          </p>
+        </details>
+
+        <details>
+          <summary>ماذا لو لم يفز المرشح؟</summary>
+          <p>
+            الالتزام باستمرارية المبادرة قائم، مع الحرص
+            على تسليم المشروع لزميل آخر بعد الاتفاق معه،
+            حتى تستمر خدمة المنخرطين.
+          </p>
+        </details>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+
+      <span>07 / تواصل</span>
+
+      <h2>الإنصات بداية كل حل</h2>
+
       <p>
-        أؤمن بأن التمثيل الحقيقي للمنخرطين يبدأ بالإنصات إليهم،
-        وفهم مشاكلهم، والعمل على نقل انشغالاتهم بكل جدية ومسؤولية.
+        باب التواصل مفتوح للاستفسارات والمقترحات
+        والانشغالات المتعلقة بخدمات المنخرطين.
       </p>
 
-      <p>
-        أطمح إلى المساهمة في بناء علاقة تواصل فعالة بين المنخرطين
-        والمؤسسات المعنية، وتقريب المعلومة والخدمات من الجميع.
-      </p>
-
-      <p>
-        لا أقدم وعوداً خارج حدود الصلاحيات، وإنما ألتزم بالعمل
-        والتواصل والوضوح في كل ما يمكن القيام به.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="section program-section" id="program">
-  <div class="container">
-    <div class="section-title">
-      <span class="eyebrow">رؤيتي للعمل</span>
-      <h2>برنامج عمل مبني على <span>الإنصات والثقة</span></h2>
-      <p>مبادئ عملية تجعل انشغالات المنخرط في صلب الاهتمام.</p>
-    </div>
-
-    <div class="program-grid">
-
-      <article class="program-card">
-        <span>01</span>
-        <h3>الإنصات لانشغالاتكم</h3>
-        <p>فتح قنوات للتواصل والاستماع إلى المشاكل والاقتراحات.</p>
-      </article>
-
-      <article class="program-card">
-        <span>02</span>
-        <h3>دليل الخدمات</h3>
-        <p>تسهيل الوصول إلى المعلومات المتعلقة بالخدمات والملفات.</p>
-      </article>
-
-      <article class="program-card">
-        <span>03</span>
-        <h3>التوجيه والمواكبة</h3>
-        <p>توجيه المنخرط نحو المصالح المختصة ومساعدته على فهم المساطر.</p>
-      </article>
-
-      <article class="program-card">
-        <span>04</span>
-        <h3>نقل الانشغالات</h3>
-        <p>إيصال القضايا المشتركة للمنخرطين إلى الجهات المعنية.</p>
-      </article>
-
-      <article class="program-card">
-        <span>05</span>
-        <h3>التواصل والإخبار</h3>
-        <p>تقريب المستجدات والمعلومات من المنخرطين بشكل واضح.</p>
-      </article>
-
-      <article class="program-card">
-        <span>06</span>
-        <h3>الاستمرارية والشفافية</h3>
-        <p>العمل بروح المسؤولية وتقديم توضيحات حول ما تحقق وما تعذر.</p>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<section class="section services-section" id="services">
-  <div class="container">
-    <div class="section-title">
-      <span class="eyebrow">معلومة في متناولك</span>
-      <h2>دليل خدمات <span>التعاضدية</span></h2>
-      <p>روابط تساعدك على الوصول إلى المعلومات والخدمات الرسمية.</p>
-    </div>
-
-    <div class="services-grid">
-
-      <a class="service-card" href="https://www.mgpap.org.ma/index.php/fr/" target="_blank" rel="noopener">
-        <span>01</span>
-        <h3>الموقع الرسمي</h3>
-        <p>الولوج إلى البوابة الرسمية للتعاضدية.</p>
-        <b>زيارة الموقع ←</b>
+      <a href="https://ababou.github.io/mandoub/"
+         target="_blank"
+         rel="noopener"
+         class="btn gold-button">
+        زيارة بوابة التواصل السابقة ↗
       </a>
 
-      <a class="service-card" href="https://www.mgpap.org.ma/index.php/fr/" target="_blank" rel="noopener">
-        <span>02</span>
-        <h3>الخدمات والتغطية</h3>
-        <p>الاطلاع على المعلومات المتعلقة بالخدمات والتغطية الصحية.</p>
-        <b>المزيد من المعلومات ←</b>
-      </a>
+    </section>
 
-      <a class="service-card" href="https://www.mgpap.org.ma/index.php/fr/" target="_blank" rel="noopener">
-        <span>03</span>
-        <h3>الوثائق والمساطر</h3>
-        <p>الرجوع إلى المصادر الرسمية لمعرفة الوثائق والإجراءات.</p>
-        <b>اكتشف المزيد ←</b>
-      </a>
+  </main>
 
-      <a class="service-card" href="https://www.mgpap.org.ma/index.php/fr/" target="_blank" rel="noopener">
-        <span>04</span>
-        <h3>المستجدات</h3>
-        <p>متابعة الأخبار والإعلانات الصادرة عن التعاضدية.</p>
-        <b>تابع المستجدات ←</b>
-      </a>
 
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="footer-brand">
+      <span>14</span>
+      <b>محمد اعبابو</b>
     </div>
-
-    <p class="official-note">
-      هذه الصفحة تعريفية ومستقلة، ولا تمثل الموقع الرسمي للتعاضدية.
-      المرجع المعتمد للمعلومات هو الموقع الرسمي والجهات المختصة.
-    </p>
-  </div>
-</section>
-
-<section class="section campaign-section" id="campaign">
-  <div class="container">
-
-    <div class="section-title">
-      <span class="eyebrow">فضاء الحملة</span>
-      <h2>معاً من أجل <span>تواصل أفضل</span></h2>
-      <p>بعض المواد التعريفية والفيديوهات المتعلقة بالترشيح.</p>
-    </div>
-
-    <div class="flyers-grid">
-      <div class="flyer-card">
-        <img src="assets/flayer1.jpg" alt="المنشور التعريفي الأول" loading="lazy">
-      </div>
-
-      <div class="flyer-card">
-        <img src="assets/flayer2.jpg" alt="المنشور التعريفي الثاني" loading="lazy">
-      </div>
-    </div>
-
-    <div class="videos-grid">
-
-      <div class="video-card">
-        <div class="video-frame">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/PltwsJNZ58U"
-            title="فيديو تعريفي بالترشيح"
-            loading="lazy"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <h3>رسالة إلى المنخرطين</h3>
-      </div>
-
-      <div class="video-card">
-        <div class="video-frame">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/4A7sWfkvDpc"
-            title="فيديو الحملة الانتخابية"
-            loading="lazy"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <h3>معاً من أجل التغيير الإيجابي</h3>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="section commitment-section">
-  <div class="container commitment-box">
-    <span class="eyebrow">التزام واضح</span>
-    <h2>الصدق في الوعد، والوضوح في المسؤولية</h2>
 
     <p>
-      دور المندوب هو التمثيل ونقل الانشغالات والتواصل والتوجيه
-      في حدود الصلاحيات المتاحة. ولا يمكنه ضمان قبول الملفات
-      أو آجال معالجتها أو تغيير قرارات الجهات المختصة.
+      صوت القرب · الإنصات · التوجيه · المواكبة
     </p>
 
-    <p>
-      كما أن احترام سرية المعطيات الشخصية أمر أساسي؛
-      لذلك لا ينبغي إرسال الوثائق أو المعلومات الحساسة عبر قنوات عامة.
-    </p>
-  </div>
-</section>
-
-<section class="section faq-section">
-  <div class="container">
-    <div class="section-title">
-      <span class="eyebrow">أسئلة مهمة</span>
-      <h2>أسئلة <span>وأجوبة</span></h2>
+    <div class="footer-links">
+      <a href="#home">الرئيسية</a>
+      <a href="#about">عن المرشح</a>
+      <a href="#program">برنامج العمل</a>
+      <a href="#services">دليل الخدمات</a>
+      <a href="#contact">التواصل</a>
     </div>
 
-    <div class="faq-list">
+    <small>
+      موقع تعريفي مستقل خاص بالمرشح محمد اعبابو.
+      لا يمثل الموقع الرسمي للتعاضدية.
+    </small>
 
-      <details>
-        <summary>ما هو دور المندوب؟</summary>
-        <p>تمثيل المنخرطين ونقل انشغالاتهم والمساهمة في التواصل والتوجيه وفق الصلاحيات المتاحة.</p>
-      </details>
+  </footer>
 
-      <details>
-        <summary>هل يمكن للمندوب ضمان قبول ملف معين؟</summary>
-        <p>لا، القرار يعود إلى المصالح والجهات المختصة، ودور المندوب هو التوجيه والمواكبة في حدود اختصاصه.</p>
-      </details>
 
-      <details>
-        <summary>كيف يمكن إيصال الانشغالات؟</summary>
-        <p>يمكن التواصل عبر قنوات التواصل المتاحة، مع الحرص على عدم مشاركة الوثائق الشخصية في فضاءات عامة.</p>
-      </details>
+  <script src="script.js"></script>
 
-      <details>
-        <summary>هل هذا الموقع تابع للتعاضدية؟</summary>
-        <p>لا، هذا موقع تعريفي مستقل بالترشيح، ولا يمثل التعاضدية أو يتحدث باسمها.</p>
-      </details>
-
-    </div>
-  </div>
-</section>
-
-<section class="contact-section" id="contact">
-  <div class="container contact-content">
-    <span class="eyebrow">كلمة أخيرة</span>
-    <h2>ثقتكم مسؤولية، وصوتكم أمانة</h2>
-    <p>
-      شكراً لكل من يساهم في نشر المعلومة والتعريف بهذا الترشيح.
-      نلتقي على أساس الاحترام والعمل المسؤول.
-    </p>
-
-    <div class="contact-actions">
-      <a href="https://www.mgpap.org.ma/index.php/fr/" target="_blank" rel="noopener" class="btn btn-gold">
-        الموقع الرسمي للتعاضدية
-      </a>
-      <a href="https://ababou.github.io/mandoub/" target="_blank" rel="noopener" class="btn btn-outline-light">
-        البوابة السابقة
-      </a>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-content">
-    <div>
-      <strong>محمد اعبابو</strong>
-      <p>المرشح رقم 14</p>
-    </div>
-    <p>موقع تعريفي مستقل بالترشيح – 2026</p>
-  </div>
-</footer>
-
-<script src="script.js"></script>
 </body>
 </html>
