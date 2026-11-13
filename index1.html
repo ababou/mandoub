@@ -1,693 +1,586 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#09271f">
-
-  <meta name="description" content="محمد اعبابو، المرشح رقم 14 لمهمة مندوب منخرطي التعاضدية العامة لموظفي الإدارات العمومية.">
-
-  <title>محمد اعبابو | المرشح رقم 14 - صوت القرب</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>بوابة التواصل مع مندوب التعاضدية</title>
+<meta name="description" content="بوابة تواصل شخصية مع مندوب التعاضدية العامة لموظفي الإدارات العمومية لفائدة موظفي جماعة الرباط.">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:title" content="بوابة التواصل مع مندوب التعاضدية">
+<meta property="og:description" content="تواصل معي مباشرة: واتساب، هاتف، إيميل، أو طلب موعد.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brand:#0f766e; --brand-d:#0b5a54; --brand-l:#ccfbf1; --accent:#f59e0b;
+  --bg:#f4f7f6; --card:#ffffff; --text:#1f2937; --muted:#6b7280; --line:#e5e7eb;
+  --wa:#25d366; --radius:18px; --shadow:0 6px 24px rgba(15,118,110,.10);
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#0b1514; --card:#12201f; --text:#e5f2f0; --muted:#9db3b0; --line:#1f3331; --brand-l:#12302d; --shadow:0 6px 24px rgba(0,0,0,.4)}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
+img,svg{max-width:100%}
+body{overflow-x:hidden;position:relative;width:100%;max-width:100vw}
+body{font-family:'Cairo',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:16px}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.brand{font-weight:800;color:var(--brand);display:flex;align-items:center;gap:8px;font-size:1.05rem}
+.brand i{width:34px;height:34px;border-radius:10px;background:var(--brand);color:#fff;display:grid;place-items:center;font-style:normal}
+nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav a{padding:6px 12px;border-radius:999px;font-size:.9rem;font-weight:600;color:var(--muted);white-space:nowrap}
+nav a:hover{background:var(--brand-l);color:var(--brand)}
+.hero{background:linear-gradient(135deg,var(--brand) 0%,#115e59 60%,#134e4a 100%);color:#fff;padding:48px 0 70px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto -80px -120px auto;width:360px;height:360px;border-radius:50%;background:rgba(255,255,255,.07)}
+.hero .tag{display:inline-block;background:rgba(255,255,255,.15);padding:4px 14px;border-radius:999px;font-size:.85rem;margin-bottom:14px}
+.hero h1{font-size:clamp(1.6rem,5vw,2.6rem);font-weight:800;line-height:1.4}
+.hero p{opacity:.92;max-width:640px;margin-top:10px}
+.hero .who{margin-top:18px;display:flex;align-items:center;gap:14px}
+.avatar{width:88px;height:88px;border-radius:50%;background:#fff;color:var(--brand);display:grid;place-items:center;font-size:1.6rem;font-weight:800;overflow:hidden;flex:none;border:3px solid rgba(255,255,255,.65);box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.who b{display:block;font-size:1.15rem}
+.who span{opacity:.85;font-size:.92rem}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:14px;font-weight:700;font-family:inherit;font-size:1rem;border:0;cursor:pointer;transition:.18s;min-height:48px}
+.btn:hover{transform:translateY(-2px)}
+.btn-wa{background:var(--wa);color:#073b1d}
+.btn-light{background:#fff;color:var(--brand)}
+.btn-ghost{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.35)}
+.btn-brand{background:var(--brand);color:#fff}
+.btn-outline{background:transparent;color:var(--brand);border:2px solid var(--brand)}
+.btn-sm{padding:8px 14px;min-height:38px;font-size:.9rem;border-radius:10px}
+section{padding:46px 0}
+.sec-title{font-size:1.6rem;font-weight:800;color:var(--brand);margin-bottom:6px}
+.sec-sub{color:var(--muted);margin-bottom:24px}
+.pull{margin-top:-40px;position:relative;z-index:2}
+.grid{display:grid;gap:14px}
+.g-contact{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.g-3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.c-card{display:flex;flex-direction:column;gap:6px}
+.c-card .ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:1.4rem;background:var(--brand-l)}
+.c-card h3{font-size:1.05rem}
+.c-card .val{direction:ltr;text-align:right;color:var(--muted);font-size:.95rem;word-break:break-all}
+.c-card .row{display:flex;gap:8px;margin-top:6px;flex-wrap:wrap}
+.news{display:flex;flex-direction:column;gap:10px}
+.news .item{display:flex;gap:12px;align-items:flex-start}
+.news .date{background:var(--accent);color:#3b2600;border-radius:10px;padding:4px 10px;font-weight:700;font-size:.82rem;white-space:nowrap}
+.news .item.pin{border-inline-start:5px solid var(--accent)}
+.steps{counter-reset:s;display:grid;gap:12px}
+.steps li{list-style:none;counter-increment:s;display:flex;gap:12px;align-items:flex-start}
+.steps li::before{content:counter(s);flex:none;width:32px;height:32px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:800}
+ul.checks{list-style:none;display:grid;gap:8px}
+ul.checks li::before{content:"✔";color:var(--brand);margin-inline-end:8px;font-weight:800}
+.note{background:#fffbeb;border:1px solid #fde68a;color:#78350f;padding:12px 14px;border-radius:12px;font-size:.92rem}
+@media (prefers-color-scheme: dark){.note{background:#2a2310;border-color:#5b4a14;color:#fde68a}}
+.tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.tab{padding:10px 18px;border-radius:12px;border:2px solid var(--line);background:var(--card);font-family:inherit;font-weight:700;cursor:pointer;color:var(--text)}
+.tab.on{border-color:var(--brand);background:var(--brand-l);color:var(--brand)}
+form .fg{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+label{font-weight:600;font-size:.92rem;display:block;margin-bottom:4px}
+input,select,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--text);font-family:inherit;font-size:1rem}
+input:focus,select:focus,textarea:focus{outline:3px solid color-mix(in srgb,var(--brand) 35%,transparent);border-color:var(--brand)}
+textarea{min-height:120px;resize:vertical}
+.full{grid-column:1/-1}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:.9rem}
+.chk input{width:20px;height:20px;margin-top:5px;flex:none}
+.hp{position:absolute;width:0;height:0;opacity:0;overflow:hidden;pointer-events:none;border:0;padding:0}
+.status{margin-top:12px;padding:12px;border-radius:12px;display:none;font-weight:600}
+.status.ok{display:block;background:#dcfce7;color:#14532d}
+.status.err{display:block;background:#fee2e2;color:#7f1d1d}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:10px}
+summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::after{content:"＋";color:var(--brand);font-weight:800}
+details[open] summary::after{content:"－"}
+details p{margin-top:10px;color:var(--muted)}
+.share{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:start}
+.qr{display:grid;place-items:center;background:#fff;padding:14px;border-radius:14px;width:fit-content;margin:0 auto}
+.msgbox{background:var(--bg);border:1.5px dashed var(--brand);border-radius:12px;padding:14px;white-space:pre-wrap;font-size:.95rem}
+.hours{display:grid;gap:6px}
+.hours div{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding:4px 0}
+footer{background:#0b1f1d;color:#cfe3e0;padding:34px 0 90px;font-size:.9rem}
+footer a{color:#7ee0d3;text-decoration:underline}
+.fab{position:fixed;bottom:18px;inset-inline-start:18px;z-index:60;background:var(--wa);color:#073b1d;border-radius:999px;padding:12px 18px;font-weight:800;display:flex;gap:8px;align-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);background:#111827;color:#fff;padding:10px 18px;border-radius:12px;opacity:0;pointer-events:none;transition:.25s;z-index:99}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media (max-width:640px){
+  body{font-size:15.5px}
+  .wrap{padding:0 14px}
+  header.top .wrap{height:auto;flex-direction:column;align-items:stretch;gap:2px;padding-top:8px;padding-bottom:6px}
+  .brand{justify-content:center;font-size:1rem}
+  nav{padding:2px 0 4px;-webkit-overflow-scrolling:touch}
+  nav a{padding:6px 11px;font-size:.88rem;background:var(--bg)}
+  .hero{padding:26px 0 64px;text-align:center}
+  .hero h1{font-size:1.45rem}
+  .hero p{margin-inline:auto;font-size:.95rem}
+  .hero .who{flex-direction:column;text-align:center;gap:8px}
+  .avatar{width:112px;height:112px}
+  .cta{flex-direction:column}
+  .cta .btn{width:100%}
+  .pull{margin-top:-44px}
+  section{padding:30px 0}
+  .sec-title{font-size:1.3rem}
+  .sec-sub{margin-bottom:16px;font-size:.92rem}
+  .g-contact,.g-3,.share,form .fg{grid-template-columns:1fr}
+  .card{padding:14px}
+  .c-card .row .btn{flex:1}
+  .tabs .tab{flex:1 1 100%;text-align:center}
+  .news .item{flex-direction:column;gap:6px}
+  .hours div{flex-direction:column;gap:0}
+  .qr{max-width:100%}
+  .fab{inset-inline-start:12px;bottom:12px;padding:11px 15px}
+  .toast{width:max-content;max-width:90vw;text-align:center}
+}
+@media (max-width:360px){
+  .hero h1{font-size:1.3rem}
+  .btn{padding:11px 14px}
+}
+@media print{header.top,.fab,.cta,form{display:none}}
+</style>
 </head>
-
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <a href="#home" class="brand">
-      <span class="brand-number">14</span>
-      <span class="brand-text">
-        <b>صوت القرب</b>
-        <small>الإنصات · التوجيه · المواكبة</small>
-      </span>
-    </a>
+<!-- ============================================================
+     ⚙️ الإعدادات: بدل هاد القيم غير هنا، والموقع كامل غادي يتحدث
+     ============================================================ -->
+<script>
+const CONFIG = {
+  name: "محمد اعبابو   ",              // ← بدلو
+  role: "مندوب التعاضدية العامة لموظفي الإدارات العمومية (إلى نجحنا انشاء الله الى مكتابش نسلموها إلى أحد الزملاء)",
+  org: "لفائدة موظفي جماعة الرباط",
+  photo: "",                                  // مثال: "photo.jpg" (حط الصورة فنفس المجلد) أو خليه فارغ
+  whatsapp: "212661309444",                   // بصيغة دولية بلا + ولا 0 فالبداية
+  phone: "+212661309444",
+  email: "mohamedababou@gmail.com",
+  telegram: "",                               // مثال: "username" (بلا @) أو خليه فارغ
+  whatsappGroup: "",                          // رابط مجموعة واتساب https://chat.whatsapp.com/... أو فارغ
+  whatsappChannel: "",                        // رابط قناة واتساب https://whatsapp.com/channel/... أو فارغ
+  facebook: "",                               // رابط صفحة/مجموعة فيسبوك أو فارغ
+  web3formsKey: "8e36c940-f471-43f5-b07f-7ef79f9c6e2a",  // مفتاح مجاني من web3forms.com
+  siteUrl: "",                                // رابط الموقع بعد النشر (مثال https://username.github.io/mandoub/) ؛ فارغ = كياخد الرابط الحالي
+  meeting: {
+    place: "مقر جماعة الرباط ",
+    mapUrl: "https://maps.app.goo.gl/Nb71uTVHjHLWPy2y9",                               // رابط Google Maps أو فارغ
+    hours: [
+      ["الاثنين – الجمعة", "12:00 – 13:30 "],
+      ["مواعيد خاصة", "بالتنسيق المسبق عبر الواتساب"]
+    ]
+  },
+  announcements: [
+    { date: "جديد", pin: true, title: "إطلاق بوابة التواصل", text: "من هنا تقدر تتواصل معايا مباشرة، تطلب موعد، أو تسول على أي موضوع كيخص التعاضدية." }
+    // زيد إعلانات أخرى بنفس الشكل: { date:"15 نونبر", title:"...", text:"..." }
+  ],
+  services: [
+    { icon: "🩺", title: "الاستفسار والتوجيه", text: "شرح مسطرة الاستفادة من خدمات التعاضدية وتوجيهك للمصلحة المناسبة." },
+    { icon: "📁", title: "مواكبة الملفات", text: "مساعدتك فتهيئ الملف وفإيداعه وتتبع مآله مع التعاضدية." },
+    { icon: "📣", title: "نقل الانشغالات", text: "نقل ملاحظاتك واقتراحاتك وشكاياتك للجهات المعنية بالتعاضدية." },
+    { icon: "🔔", title: "التنبيه والإخبار", text: "إخبارك بالمستجدات والمواعيد والحملات الجديدة." },
+    { icon: "🤝", title: "اللقاءات المباشرة", text: "لقاءات دورية بالموظفين لسماع مشاكلهم وتوضيح المساطر." },
+    { icon: "👨‍👩‍👧", title: "الأسرة والمستفيدون", text: "استفسارات حول ضم الأبناء والزوج(ة) والمستفيدين من الحقوق." }
+  ],
+  documents: [
+    "نسخة من بطاقة التعريف الوطنية",
+    "رقم الانخراط/رقم التسجيل فالتعاضدية",
+    "الوصفات الطبية والفواتير والتقارير المتعلقة بالعلاج",
+    "ملف/استمارة التعويض الخاصة بالتعاضدية",
+    "الوثائق الخاصة بالمستفيدين (عقد الازدياد، شهادة الدراسة...) عند الحاجة"
+  ],
+  faq: [
+    ["كيفاش نتواصل مع المندوب بأسرع طريقة؟", "عبر الواتساب. كنجاوب فأقرب وقت ممكن، ويمكن تطلب مكالمة أو موعد مباشر."],
+    ["واش يمكن نبعت ملفي الطبي عبر الموقع؟", "لا. حفاظا على سرية معطياتك الصحية، ما تبعتش معلومات طبية أو أرقام ملفات عبر الاستمارة. اطلب موعد أو كلمني على الواتساب وغادي نوجهك."],
+    ["واش هاد الموقع هو الموقع الرسمي ديال التعاضدية؟", "لا. هاد البوابة مبادرة شخصية من المندوب للتواصل مع الموظفين. المعلومات الرسمية كاينة عند التعاضدية."],
+    ["شحال كتاخد المدة باش نتوصل بجواب؟", "عادة فخلال يوم إلى يومين عمل. وإلى كان الموضوع مستعجل اختار 'مستعجل' فالاستمارة وكلمني على الواتساب."],
+    ["واش خاصني نعمر الاستمارة وأنا كنتواصل بالواتساب؟", "لا. الاستمارة اختيارية، والواتساب كاف. الاستمارة مفيدة إلا بغيتي توصلك الرسالة منظمة بالاسم والموضوع."],
+    ["كيفاش نطلب موعد؟", "فالاستمارة اختار 'طلب موعد' وحدد الوقت المناسب ليك، أو دير رسالة واتساب جاهزة من نفس القسم."]
+  ]
+};
+</script>
 
-    <button class="menu-toggle"
-            aria-label="فتح القائمة"
-            aria-expanded="false"
-            aria-controls="main-nav">
-      ☰
-    </button>
-
-    <nav id="main-nav">
-      <a href="#home">الرئيسية</a>
-      <a href="#about">عن المرشح</a>
-      <a href="#program">برنامج العمل</a>
-      <a href="#services">دليل الخدمات</a>
-      <a href="#campaign">فضاء الحملة</a>
-      <a href="#faq">أسئلة شائعة</a>
-      <a href="#contact" class="nav-contact">تواصل معنا</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><i>🤝</i><span>بوابة التواصل</span></a>
+    <nav>
+      <a href="#contact">تواصل</a>
+      <a href="#news">الإعلانات</a>
+      <a href="#services">الخدمات</a>
+      <a href="#docs">الملفات</a>
+      <a href="#form">راسلني</a>
+      <a href="#faq">أسئلة</a>
+      <a href="#share">شارك</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-
-  <!-- HERO -->
-  <main>
-
-    <section class="hero" id="home">
-
-      <div class="hero-content">
-        <span class="eyebrow">انتداب منخرطي التعاضدية</span>
-
-        <h1>محمد اعبابو</h1>
-
-        <h2>صوت القرب... ومسؤولية الإنصات</h2>
-
-        <div class="candidate-number">
-          <strong>14</strong>
-          <span>رقم الترتيب الانتخابي</span>
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <span class="tag">بوابة تواصل شخصية • غير رسمية</span>
+      <h1>معاك دايما، <br>باش تبقى على تواصل مع التعاضدية</h1>
+      <p>سول، استفسر، قترح، أو طلب موعد. كل وسائل التواصل فمكان واحد.</p>
+      <div class="who">
+        <div class="avatar" id="avatar">   
+          
+        
         </div>
-
-        <p class="hero-description">
-          ترشيحي هو التزام بالإنصات لانشغالات الزميلات والزملاء،
-          والتعريف بحقوق المنخرطين، والمساهمة في إيصال صوتهم
-          ومواكبة ملفاتهم في حدود الاختصاصات والصلاحيات المتاحة.
-        </p>
-
-        <div class="hero-buttons">
-          <a href="#program" class="btn gold-button">اكتشف برنامج العمل</a>
-          <a href="#about" class="btn outline-button">تعرف على المرشح</a>
-        </div>
-
-        <p class="hero-note">
-          موقع تعريفي مستقل، وليس موقعاً رسمياً للتعاضدية.
-        </p>
+        <div><b id="hName"></b><span id="hRole"></span><br><span id="hOrg"></span></div>
       </div>
-
-
-      <!-- صورة المرشح -->
-      <div class="hero-photo">
-        <div class="photo-frame">
-
-          <img
-            src="assets/candidate.jpg"
-            alt="صورة محمد اعبابو"
-            onerror="this.hidden=true; document.getElementById('candidate-placeholder').hidden=false;"
-          >
-
-          <div class="photo-placeholder" id="candidate-placeholder" hidden>
-            <span>م ا</span>
-            <b>محمد اعبابو</b>
-            <small>المرشح رقم 14</small>
-          </div>
-
-          <div class="photo-label">
-            <b>محمد اعبابو</b>
-            <span>الترتيب رقم 14</span>
-          </div>
-
-        </div>
+      <div class="cta">
+        <a class="btn btn-wa" id="ctaWa" target="_blank" rel="noopener">💬 تواصل معي فالواتساب</a>
+        <a class="btn btn-light" id="ctaCall">📞 اتصل بي</a>
+        <a class="btn btn-ghost" href="#form">✉️ ارسل رسالة / طلب موعد</a>
       </div>
-
-    </section>
-
-
-    <!-- VALUES -->
-    <section class="values">
-      <div>
-        <b>الإنصات</b>
-        <span>الاستماع لانشغالات المنخرطين</span>
-      </div>
-
-      <div>
-        <b>التوجيه</b>
-        <span>توضيح المساطر والمعلومات</span>
-      </div>
-
-      <div>
-        <b>المواكبة</b>
-        <span>متابعة الملفات والانشغالات</span>
-      </div>
-
-      <div>
-        <b>الشفافية</b>
-        <span>وضوح في التواصل والالتزامات</span>
-      </div>
-    </section>
-
-
-    <!-- ABOUT -->
-    <section class="section" id="about">
-
-      <div class="section-heading">
-        <span>01 / من أنا؟</span>
-        <h2>قريب من المنخرط... ومسؤول أمامه</h2>
-        <p>
-          التعريف بالمرشح وبالدور الذي يطمح إلى القيام به
-          دفاعاً عن مصالح المنخرطين.
-        </p>
-      </div>
-
-      <div class="about-box">
-
-        <div class="about-main">
-          <h3>محمد اعبابو</h3>
-
-          <p>
-            أترشح لمهمة مندوب منخرطي التعاضدية العامة لموظفي
-            الإدارات العمومية، إيماناً مني بأهمية التواصل
-            المباشر والإنصات لانشغالات الزميلات والزملاء.
-          </p>
-
-          <p>
-            أطمح إلى أن أكون حلقة وصل مسؤولة بين المنخرطين
-            والمؤسسات المعنية، من خلال التعريف بالخدمات
-            المتاحة، والتوجيه، والمواكبة، ونقل الانشغالات
-            بكل جدية ووضوح.
-          </p>
-        </div>
-
-        <div class="about-points">
-
-          <article>
-            <b>الإنصات قبل كل شيء</b>
-            <p>فهم الانشغال والاستماع إلى صاحبه دون أحكام مسبقة.</p>
-          </article>
-
-          <article>
-            <b>المعلومة الصحيحة</b>
-            <p>الاعتماد على المصادر الرسمية وتجنب الوعود غير الواقعية.</p>
-          </article>
-
-          <article>
-            <b>المسؤولية والوضوح</b>
-            <p>توضيح ما يمكن القيام به وما يدخل خارج نطاق الصلاحيات.</p>
-          </article>
-
-          <article>
-            <b>الاستمرارية</b>
-            <p>جعل خدمة المنخرطين عملاً مستمراً وليس مجرد شعار انتخابي.</p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- PROGRAM -->
-    <section class="section dark-section" id="program">
-
-      <div class="section-heading">
-        <span>02 / برنامج العمل</span>
-        <h2>التزامات عملية... لا وعود انتخابية</h2>
-        <p>
-          برنامج يرتكز على التواصل، والتوجيه، والمواكبة،
-          والعمل المسؤول في حدود الاختصاصات.
-        </p>
-      </div>
-
-      <div class="program-grid">
-
-        <article class="program-card">
-          <span>01</span>
-          <h3>الإنصات والتواصل</h3>
-          <p>
-            فتح قنوات للتواصل مع المنخرطين والاستماع
-            إلى مشاكلهم ومقترحاتهم.
-          </p>
-        </article>
-
-        <article class="program-card">
-          <span>02</span>
-          <h3>التوجيه الإداري</h3>
-          <p>
-            مساعدة المنخرطين على فهم المساطر والوثائق
-            المطلوبة ومصادر المعلومات الرسمية.
-          </p>
-        </article>
-
-        <article class="program-card">
-          <span>03</span>
-          <h3>مواكبة الملفات</h3>
-          <p>
-            تتبع الانشغالات والملفات المطروحة وتوجيهها
-            إلى الجهات المختصة.
-          </p>
-        </article>
-
-        <article class="program-card">
-          <span>04</span>
-          <h3>التعريف بالخدمات</h3>
-          <p>
-            تقريب المعلومات المتعلقة بالخدمات الصحية
-            والاجتماعية والتعاضدية.
-          </p>
-        </article>
-
-        <article class="program-card">
-          <span>05</span>
-          <h3>الشفافية والتواصل</h3>
-          <p>
-            التواصل بوضوح حول الملفات والمستجدات
-            والإكراهات التي تواجه المنخرطين.
-          </p>
-        </article>
-
-        <article class="program-card">
-          <span>06</span>
-          <h3>استمرارية المبادرة</h3>
-          <p>
-            إذا لم أحظ بثقة الناخبين، سأحرص على استمرارية
-            هذه المبادرة وتسليم المشروع لزميل آخر بعد
-            الاتفاق معه، حتى لا يتوقف العمل من أجل المنخرطين.
-          </p>
-        </article>
-
-      </div>
-    </section>
-
-
-    <!-- SERVICES -->
-    <section class="section" id="services">
-
-      <div class="section-heading">
-        <span>03 / دليل الخدمات</span>
-        <h2>معلومات تساعدك على معرفة حقوقك</h2>
-        <p>
-          روابط للتعرف على بعض الخدمات والملفات التي تهم المنخرطين.
-          المرجع النهائي هو الموقع الرسمي للتعاضدية.
-        </p>
-      </div>
-
-      <div class="service-grid">
-
-        <a class="service-card"
-           href="https://www.mgpap.org.ma/index.php/fr/"
-           target="_blank" rel="noopener">
-          <span class="service-icon">01</span>
-          <b>الانخراط والوضعية الإدارية</b>
-          <small>معلومات حول الانخراط والملفات الإدارية.</small>
-          <span class="service-arrow">الموقع الرسمي ↗</span>
-        </a>
-
-        <a class="service-card"
-           href="https://www.mgpap.org.ma/index.php/fr/"
-           target="_blank" rel="noopener">
-          <span class="service-icon">02</span>
-          <b>ملف التقاعد</b>
-          <small>التعرف على الخدمات المرتبطة بالمتقاعدين.</small>
-          <span class="service-arrow">الموقع الرسمي ↗</span>
-        </a>
-
-        <a class="service-card"
-           href="https://www.mgpap.org.ma/index.php/fr/"
-           target="_blank" rel="noopener">
-          <span class="service-icon">03</span>
-          <b>ملفات الوفاة</b>
-          <small>التوجيه بشأن الملفات المتعلقة بحالة الوفاة.</small>
-          <span class="service-arrow">الموقع الرسمي ↗</span>
-        </a>
-
-        <a class="service-card"
-           href="https://www.mgpap.org.ma/index.php/fr/"
-           target="_blank" rel="noopener">
-          <span class="service-icon">04</span>
-          <b>المنحة المدرسية</b>
-          <small>معلومات حول المنح والخدمات الاجتماعية.</small>
-          <span class="service-arrow">الموقع الرسمي ↗</span>
-        </a>
-
-        <a class="service-card"
-           href="https://www.mgpap.org.ma/index.php/fr/"
-           target="_blank" rel="noopener">
-          <span class="service-icon">05</span>
-          <b>مراكز التشخيص</b>
-          <small>التعرف على الخدمات الصحية المتاحة.</small>
-          <span class="service-arrow">الموقع الرسمي ↗</span>
-        </a>
-
-        <a class="service-card"
-           href="https://www.mgpap.org.ma/index.php/fr/"
-           target="_blank" rel="noopener">
-          <span class="service-icon">06</span>
-          <b>طب الأسنان</b>
-          <small>معلومات حول خدمات العناية بالأسنان.</small>
-          <span class="service-arrow">الموقع الرسمي ↗</span>
-        </a>
-
-        <a class="service-card"
-           href="https://www.mgpap.org.ma/index.php/fr/"
-           target="_blank" rel="noopener">
-          <span class="service-icon">07</span>
-          <b>خدمات البصريات</b>
-          <small>التعرف على الخدمات المتعلقة بالبصريات.</small>
-          <span class="service-arrow">الموقع الرسمي ↗</span>
-        </a>
-
-        <a class="service-card"
-           href="https://www.mgpap.org.ma/index.php/fr/"
-           target="_blank" rel="noopener">
-          <span class="service-icon">08</span>
-          <b>مراكز أمل</b>
-          <small>معلومات حول المراكز والخدمات المتاحة.</small>
-          <span class="service-arrow">الموقع الرسمي ↗</span>
-        </a>
-
-      </div>
-
-      <div class="official-box">
-        <div>
-          <b>للمعلومات الرسمية والمحيّنة</b>
-          <p>
-            يرجى الرجوع إلى الموقع الرسمي للتعاضدية
-            للتأكد من الشروط والمساطر والخدمات.
-          </p>
-        </div>
-
-        <a href="https://www.mgpap.org.ma/index.php/fr/"
-           target="_blank" rel="noopener"
-           class="btn gold-button">
-          زيارة موقع التعاضدية ↗
-        </a>
-      </div>
-
-    </section>
-
-
-    <!-- CAMPAIGN -->
-    <section class="section campaign-section" id="campaign">
-
-      <div class="section-heading">
-        <span>04 / فضاء الحملة</span>
-        <h2>تعرف على الحملة ومضامينها</h2>
-        <p>
-          بعض المواد التعريفية والفيديوهات المرتبطة بالترشيح.
-        </p>
-      </div>
-
-
-      <!-- FLYERS -->
-      <div class="media-heading">
-        <div>
-          <span>المطبوعات</span>
-          <h3>المواد التعريفية</h3>
-        </div>
-        <p>اضغط على الصورة لمشاهدتها.</p>
-      </div>
-
-      <div class="flyer-grid">
-
-        <article class="flyer-card">
-          <a href="assets/flayer1.jpg"
-             target="_blank"
-             class="flyer-link">
-
-            <img
-              src="assets/flayer1.jpg"
-              alt="المطوية التعريفية الأولى"
-              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-            >
-
-            <div class="flyer-placeholder">
-              <span>14</span>
-              <b>المطوية التعريفية</b>
-              <small>محمد اعبابو</small>
-            </div>
-          </a>
-
-          <div class="flyer-info">
-            <b>المطوية الأولى</b>
-            <a href="assets/flayer1.jpg" target="_blank">مشاهدة ↗</a>
-          </div>
-        </article>
-
-
-        <article class="flyer-card">
-          <a href="assets/flayer2.jpg"
-             target="_blank"
-             class="flyer-link">
-
-            <img
-              src="assets/flayer2.jpg"
-              alt="المطوية التعريفية الثانية"
-              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-            >
-
-            <div class="flyer-placeholder second">
-              <span>14</span>
-              <b>برنامج العمل</b>
-              <small>محمد اعبابو</small>
-            </div>
-          </a>
-
-          <div class="flyer-info">
-            <b>المطوية الثانية</b>
-            <a href="assets/flayer2.jpg" target="_blank">مشاهدة ↗</a>
-          </div>
-        </article>
-
-      </div>
-
-
-      <!-- VIDEOS -->
-      <div class="media-heading video-heading">
-        <div>
-          <span>الفيديوهات</span>
-          <h3>شاهد وتابع</h3>
-        </div>
-        <p>فيديوهات تعريفية مرتبطة بالحملة.</p>
-      </div>
-
-      <div class="video-grid">
-
-        <article class="video-card">
-
-          <div class="video-frame short-video">
-            <iframe
-              src="https://www.youtube.com/embed/PltwsJNZ58U"
-              title="فيديو الحملة الانتخابية"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
-          </div>
-
-          <div class="video-info">
-            <span>الفيديو الأول</span>
-            <h3>رسالة الحملة</h3>
-            <a href="https://youtube.com/shorts/PltwsJNZ58U"
-               target="_blank" rel="noopener">
-              المشاهدة على يوتيوب ↗
-            </a>
-          </div>
-
-        </article>
-
-
-        <article class="video-card">
-
-          <div class="video-frame">
-            <iframe
-              src="https://www.youtube.com/embed/4A7sWfkvDpc"
-              title="فيديو تعريفي بالترشيح"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
-          </div>
-
-          <div class="video-info">
-            <span>الفيديو الثاني</span>
-            <h3>رسالة إلى الزميلات والزملاء</h3>
-            <a href="https://youtu.be/4A7sWfkvDpc"
-               target="_blank" rel="noopener">
-              المشاهدة على يوتيوب ↗
-            </a>
-          </div>
-
-        </article>
-
-      </div>
-
-
-      <div class="youtube-banner">
-        <div>
-          <b>تابعوا المستجدات والمواد التعريفية</b>
-          <p>ساهموا في نشر المعلومة والتعريف بالمبادرة.</p>
-        </div>
-
-        <a href="https://youtube.com/shorts/PltwsJNZ58U"
-           target="_blank" rel="noopener"
-           class="btn gold-button">
-          مشاهدة الفيديوهات ↗
-        </a>
-      </div>
-
-    </section>
-
-
-    <!-- FOLLOW UP -->
-    <section class="section dark-section" id="follow-up">
-
-      <div class="section-heading">
-        <span>05 / كيف أواكب انشغالك؟</span>
-        <h2>من الاستماع إلى التوجيه والمتابعة</h2>
-        <p>
-          الهدف هو تسهيل التواصل ومساعدة المنخرط على معرفة
-          المسار المناسب لانشغاله.
-        </p>
-      </div>
-
-      <div class="steps-grid">
-
-        <article>
-          <strong>1</strong>
-          <b>التواصل</b>
-          <p>الاستماع إلى الانشغال وفهم تفاصيله.</p>
-        </article>
-
-        <article>
-          <strong>2</strong>
-          <b>تحديد الموضوع</b>
-          <p>التعرف على طبيعة الملف والمصلحة المعنية.</p>
-        </article>
-
-        <article>
-          <strong>3</strong>
-          <b>التوجيه</b>
-          <p>تقديم المعلومة وتوضيح المسطرة المتاحة.</p>
-        </article>
-
-        <article>
-          <strong>4</strong>
-          <b>المتابعة</b>
-          <p>مواكبة الانشغال في حدود الإمكانات والصلاحيات.</p>
-        </article>
-
-      </div>
-
-      <div class="warning-box">
-        <b>التزام بالوضوح والمسؤولية</b>
-        <p>
-          المندوب ليس إدارة تنفيذية ولا يملك صلاحية اتخاذ
-          القرارات الإدارية أو ضمان قبول الملفات. دوره هو
-          الإنصات والتوجيه ونقل الانشغالات والمساهمة في
-          تتبعها عبر القنوات المتاحة.
-        </p>
-      </div>
-
-    </section>
-
-
-    <!-- FAQ -->
-    <section class="section" id="faq">
-
-      <div class="section-heading">
-        <span>06 / أسئلة شائعة</span>
-        <h2>معلومات تهمك</h2>
-        <p>أجوبة واضحة حول الموقع والترشيح ومهمة المندوب.</p>
-      </div>
-
-      <div class="faq-list">
-
-        <details>
-          <summary>هل هذا موقع رسمي للتعاضدية؟</summary>
-          <p>
-            لا، هذا موقع تعريفي مستقل خاص بالمرشح محمد اعبابو،
-            ولا يمثل الموقع الرسمي للتعاضدية.
-          </p>
-        </details>
-
-        <details>
-          <summary>من أين يمكن الحصول على المعلومات الرسمية؟</summary>
-          <p>
-            المرجع الرسمي للمعلومات والخدمات هو موقع
-            التعاضدية العامة لموظفي الإدارات العمومية.
-          </p>
-        </details>
-
-        <details>
-          <summary>هل يستطيع المندوب ضمان حل جميع الملفات؟</summary>
-          <p>
-            لا يمكن ضمان نتيجة أي ملف، لأن القرار يرجع
-            إلى الجهات المختصة. دور المندوب هو الإنصات
-            والتوجيه والمواكبة ونقل الانشغالات.
-          </p>
-        </details>
-
-        <details>
-          <summary>هل يجب إرسال الوثائق الشخصية عبر الموقع؟</summary>
-          <p>
-            لا ترسل وثائقك الشخصية أو بياناتك الحساسة
-            عبر قنوات غير رسمية. استعمل القنوات المعتمدة
-            لدى الجهات المختصة.
-          </p>
-        </details>
-
-        <details>
-          <summary>ماذا لو لم يفز المرشح؟</summary>
-          <p>
-            الالتزام باستمرارية المبادرة قائم، مع الحرص
-            على تسليم المشروع لزميل آخر بعد الاتفاق معه،
-            حتى تستمر خدمة المنخرطين.
-          </p>
-        </details>
-
-      </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-    <section class="contact-section" id="contact">
-
-      <span>07 / تواصل</span>
-
-      <h2>الإنصات بداية كل حل</h2>
-
-      <p>
-        باب التواصل مفتوح للاستفسارات والمقترحات
-        والانشغالات المتعلقة بخدمات المنخرطين.
-      </p>
-
-      <a href="https://ababou.github.io/mandoub/"
-         target="_blank"
-         rel="noopener"
-         class="btn gold-button">
-        زيارة بوابة التواصل السابقة ↗
-      </a>
-
-    </section>
-
-  </main>
-
-
-  <!-- FOOTER -->
-  <footer class="footer">
-
-    <div class="footer-brand">
-      <span>14</span>
-      <b>محمد اعبابو</b>
     </div>
+  </div>
 
-    <p>
-      صوت القرب · الإنصات · التوجيه · المواكبة
+  <section id="contact" class="pull" style="padding-top:0">
+    <div class="wrap">
+      <div class="grid g-contact" id="contactGrid"></div>
+    </div>
+  </section>
+
+  <section id="news">
+    <div class="wrap">
+      <h2 class="sec-title">📢 آخر الإعلانات</h2>
+      <p class="sec-sub">المستجدات والمواعيد المهمة.</p>
+      <div class="news" id="newsList"></div>
+      <div class="card" style="margin-top:16px" id="channelBox" hidden>
+        <b>🔔 بغيتي توصلك الإعلانات مباشرة؟</b>
+        <p style="color:var(--muted)">انضم للقناة أو المجموعة باش تبقى على اطلاع.</p>
+        <div class="cta" id="channelBtns"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" style="background:var(--card)">
+    <div class="wrap">
+      <h2 class="sec-title">🧰 فاش نقدر نساعدك</h2>
+      <p class="sec-sub">خدمات المواكبة والتوجيه لفائدة موظفي جماعة الرباط.</p>
+      <div class="grid g-3" id="servicesGrid"></div>
+    </div>
+  </section>
+
+  <section id="docs">
+    <div class="wrap">
+      <h2 class="sec-title">📁 كيفاش نودع ملف؟</h2>
+      <p class="sec-sub">خطوات عامة. للتفاصيل الدقيقة تواصل معي.</p>
+      <div class="grid g-3">
+        <div class="card">
+          <h3 style="margin-bottom:10px">الوثائق المعتادة</h3>
+          <ul class="checks" id="docsList"></ul>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:10px">الخطوات</h3>
+          <ol class="steps">
+            <li><span>جمع الوثائق وتصويرها بوضوح.</span></li>
+            <li><span>التواصل معي لمراجعة الملف قبل الإيداع.</span></li>
+            <li><span>إيداع الملف حسب المسطرة المعتمدة.</span></li>
+            <li><span>تتبع الملف، وتوصل بالمستجدات.</span></li>
+          </ol>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:10px">📍 اللقاء المباشر</h3>
+          <p id="mPlace" style="margin-bottom:8px"></p>
+          <div class="hours" id="mHours"></div>
+          <a class="btn btn-outline btn-sm" id="mMap" style="margin-top:12px" target="_blank" rel="noopener" hidden>🗺️ افتح الخريطة</a>
+        </div>
+      </div>
+      <p class="note" style="margin-top:14px">ℹ️ الوثائق المطلوبة قد تختلف حسب نوع الطلب. تأكد معايا قبل الإيداع.</p>
+    </div>
+  </section>
+
+  <section id="form" style="background:var(--card)">
+    <div class="wrap">
+      <h2 class="sec-title">✉️ راسلني</h2>
+      <p class="sec-sub">اختار الطريقة اللي تناسبك.</p>
+
+      <div class="note" style="margin-bottom:16px">🔒 <b>ما تبعتش</b> معلومات طبية، أو أرقام ملفات، أو وثائق حساسة عبر هاد الاستمارة. لهاد الحالات كلمني على الواتساب أو طلب موعد.</div>
+
+      <div class="tabs" role="tablist">
+        <button class="tab on" data-mode="wa" type="button">💬 عبر الواتساب (الأسرع)</button>
+        <button class="tab" data-mode="mail" type="button">📧 عبر الإيميل</button>
+      </div>
+
+      <form id="contactForm" class="card" novalidate>
+        <input type="text" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+        <div class="fg">
+          <div><label for="fName">الاسم الكامل *</label><input id="fName" name="name" required autocomplete="name"></div>
+          <div><label for="fPhone">رقم الهاتف *</label><input id="fPhone" name="phone" type="tel" inputmode="tel" required autocomplete="tel" dir="ltr" placeholder="06XXXXXXXX"></div>
+          <div><label for="fType">أنا موظف(ة) في *</label>
+            <select id="fType" name="employee_type" required>
+              <option value="">— اختر —</option>
+              <option>جماعة الرباط</option>
+              <option>إدارة عمومية أخرى</option>
+              <option>متقاعد(ة)</option>
+            </select></div>
+          <div><label for="fSubject">الموضوع *</label>
+            <select id="fSubject" name="subject" required>
+              <option value="">— اختر —</option>
+              <option>استفسار عام</option>
+              <option>طلب موعد</option>
+              <option>مواكبة ملف</option>
+              <option>شكاية / ملاحظة</option>
+              <option>اقتراح</option>
+              <option>أخرى</option>
+            </select></div>
+          <div><label for="fPrio">الأولوية</label>
+            <select id="fPrio" name="priority"><option>عادي</option><option>مستعجل</option></select></div>
+          <div><label for="fPref">الطريقة المفضلة للرد</label>
+            <select id="fPref" name="preferred_contact"><option>واتساب</option><option>مكالمة هاتفية</option><option>إيميل</option><option>لقاء مباشر</option></select></div>
+          <div><label for="fTime">الوقت المناسب للتواصل</label>
+            <select id="fTime" name="best_time"><option>أي وقت</option><option>صباحا</option><option>فترة الاستراحة</option><option>بعد الزوال</option></select></div>
+          <div id="emailWrap"><label for="fEmail">إيميلك (اختياري، ضروري إلا اخترت الرد بالإيميل)</label><input id="fEmail" name="email" type="email" dir="ltr" autocomplete="email"></div>
+          <div class="full"><label for="fMsg">رسالتك *</label><textarea id="fMsg" name="message" required></textarea></div>
+          <label class="chk full"><input type="checkbox" id="fConsent" required><span>أوافق على استعمال معطياتي (الاسم والهاتف) فقط للرد على طلبي، وأفهم أني ما نبعتش معلومات طبية حساسة.</span></label>
+          <div class="full"><button class="btn btn-brand" id="sendBtn" type="submit">💬 افتح الواتساب بالرسالة جاهزة</button></div>
+        </div>
+        <div class="status" id="status" role="status"></div>
+      </form>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2 class="sec-title">❓ أسئلة متكررة</h2>
+      <p class="sec-sub">جواب سريع قبل ما تكتب.</p>
+      <div id="faqList"></div>
+    </div>
+  </section>
+
+  <section id="share" style="background:var(--card)">
+    <div class="wrap">
+      <h2 class="sec-title">📤 شارك البوابة مع الزملاء</h2>
+      <p class="sec-sub">كلما كثر المشاركين كلما وصلت الخدمة لعدد أكبر.</p>
+      <div class="share">
+        <div class="card">
+          <h3 style="margin-bottom:10px">رسالة جاهزة للتوزيع</h3>
+          <div class="msgbox" id="shareMsg"></div>
+          <div class="cta" style="margin-top:12px">
+            <button class="btn btn-brand btn-sm" id="copyMsg" type="button">📋 انسخ الرسالة</button>
+            <a class="btn btn-wa btn-sm" id="shareWa" target="_blank" rel="noopener">واتساب</a>
+            <a class="btn btn-outline btn-sm" id="shareTg" target="_blank" rel="noopener">تيليغرام</a>
+            <a class="btn btn-outline btn-sm" id="shareFb" target="_blank" rel="noopener">فيسبوك</a>
+            <button class="btn btn-outline btn-sm" id="nativeShare" type="button" hidden>مشاركة…</button>
+          </div>
+        </div>
+        <div class="card" style="text-align:center">
+          <h3 style="margin-bottom:10px">QR Code للطباعة أو الملصقات</h3>
+          <div class="qr" id="qr"></div>
+          <p style="color:var(--muted);margin:10px 0" id="qrUrl" dir="ltr"></p>
+          <button class="btn btn-outline btn-sm" id="copyLink" type="button">🔗 انسخ الرابط</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>تنبيه:</b> هاد البوابة مبادرة شخصية للتواصل من طرف مندوب، وليست الموقع الرسمي للتعاضدية العامة لموظفي الإدارات العمومية. للمعلومات الرسمية رجع للتعاضدية مباشرة.</p>
+    <p style="margin-top:8px"><b>الخصوصية:</b> هاد الموقع ما كيحفظش معطيات فالمتصفح. المعلومات اللي كتدخل فالاستمارة كتوصل غير للمندوب باش يجاوبك. ما تبعتش معطيات صحية حساسة.</p>
+    <p style="margin-top:8px">
+      <a href="#" id="saveContact">💾 احفظ جهة الاتصال فهاتفك</a>
     </p>
+    <p style="margin-top:14px;opacity:.7">© <span id="yr"></span> بوابة التواصل</p>
+  </div>
+</footer>
 
-    <div class="footer-links">
-      <a href="#home">الرئيسية</a>
-      <a href="#about">عن المرشح</a>
-      <a href="#program">برنامج العمل</a>
-      <a href="#services">دليل الخدمات</a>
-      <a href="#contact">التواصل</a>
-    </div>
+<a class="fab" id="fab" target="_blank" rel="noopener">💬 واتساب</a>
+<div class="toast" id="toast"></div>
 
-    <small>
-      موقع تعريفي مستقل خاص بالمرشح محمد اعبابو.
-      لا يمثل الموقع الرسمي للتعاضدية.
-    </small>
+<script>
+(function(){
+  const C = CONFIG, $ = id => document.getElementById(id);
+  const siteUrl = C.siteUrl || (location.origin + location.pathname);
+  const enc = encodeURIComponent;
+  const esc = s => String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+  const toast = t => { const el=$('toast'); el.textContent=t; el.classList.add('show'); setTimeout(()=>el.classList.remove('show'),2200); };
+  const copy = async (text, msg) => {
+    try { await navigator.clipboard.writeText(text); }
+    catch(e){ const t=document.createElement('textarea'); t.value=text; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove(); }
+    toast(msg || 'تم النسخ ✔');
+  };
+  const waLink = (text) => `https://wa.me/${C.whatsapp}` + (text ? `?text=${enc(text)}` : '');
+  const welcome = 'السلام عليكم، بغيت نستفسر على موضوع كيخص التعاضدية.';
 
-  </footer>
+  // Header / hero
+  document.title = `بوابة التواصل | ${C.name}`;
+  $('hName').textContent = C.name;
+  $('hRole').textContent = C.role;
+  $('hOrg').textContent = C.org;
+  $('yr').textContent = new Date().getFullYear();
+  const av = $('avatar');
+  const DEFAULT_PHOTO = 'data:image/svg+xml;utf8,' + enc(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">' +
+    '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14b8a6"/><stop offset="1" stop-color="#0f766e"/></linearGradient></defs>' +
+    '<rect width="200" height="200" fill="url(#g)"/>' +
+    '<circle cx="100" cy="78" r="38" fill="#ffffff" opacity=".95"/>' +
+    '<path d="M28 200c0-46 32-76 72-76s72 30 72 76z" fill="#ffffff" opacity=".95"/></svg>');
+  const img = new Image();
+  img.alt = C.name; img.width = 112; img.height = 112;
+  img.style.cssText = 'width:100%;height:100%;object-fit:cover';
+  img.onerror = () => { img.onerror = null; img.src = DEFAULT_PHOTO; };
+  img.src = C.photo || DEFAULT_PHOTO;
+  av.appendChild(img);
+  $('ctaWa').href = waLink(welcome);
+  $('fab').href = waLink(welcome);
+  $('ctaCall').href = `tel:${C.phone}`;
 
+  // Contact cards
+  const cards = [
+    {ic:'💬', t:'واتساب', v:'+'+C.whatsapp, a:[['افتح المحادثة', waLink(welcome), 'btn-wa']], c:'+'+C.whatsapp},
+    {ic:'📞', t:'مكالمة هاتفية', v:C.phone, a:[['اتصل', `tel:${C.phone}`, 'btn-brand']], c:C.phone},
+    {ic:'💌', t:'رسالة نصية SMS', v:C.phone, a:[['ارسل SMS', `sms:${C.phone}`, 'btn-outline']]},
+    {ic:'📧', t:'البريد الإلكتروني', v:C.email, a:[['ارسل إيميل', `mailto:${C.email}?subject=${enc('استفسار حول التعاضدية')}`, 'btn-brand']], c:C.email}
+  ];
+  if (C.telegram) cards.push({ic:'✈️', t:'تيليغرام', v:'@'+C.telegram, a:[['افتح', `https://t.me/${C.telegram}`, 'btn-outline']]});
+  if (C.facebook) cards.push({ic:'👥', t:'فيسبوك', v:'صفحة / مجموعة', a:[['افتح', C.facebook, 'btn-outline']]});
+  $('contactGrid').innerHTML = cards.map(x => `
+    <div class="card c-card">
+      <div class="ic">${x.ic}</div>
+      <h3>${x.t}</h3>
+      <div class="val">${esc(x.v)}</div>
+      <div class="row">
+        ${x.a.map(a=>`<a class="btn btn-sm ${a[2]}" href="${esc(a[1])}" ${a[1].startsWith('http')?'target="_blank" rel="noopener"':''}>${a[0]}</a>`).join('')}
+        ${x.c?`<button class="btn btn-sm btn-outline" data-copy="${esc(x.c)}" type="button">نسخ</button>`:''}
+      </div>
+    </div>`).join('');
+  document.querySelectorAll('[data-copy]').forEach(b => b.addEventListener('click', () => copy(b.dataset.copy)));
 
-  <script src="script.js"></script>
+  // News
+  $('newsList').innerHTML = C.announcements.map(n => `
+    <div class="card item ${n.pin?'pin':''}">
+      <span class="date">${esc(n.date)}</span>
+      <div><b>${esc(n.title)}</b><p style="color:var(--muted)">${esc(n.text)}</p></div>
+    </div>`).join('');
+  const chBtns = [];
+  if (C.whatsappChannel) chBtns.push(`<a class="btn btn-wa btn-sm" href="${esc(C.whatsappChannel)}" target="_blank" rel="noopener">📢 قناة الواتساب</a>`);
+  if (C.whatsappGroup) chBtns.push(`<a class="btn btn-wa btn-sm" href="${esc(C.whatsappGroup)}" target="_blank" rel="noopener">👥 مجموعة الواتساب</a>`);
+  if (chBtns.length){ $('channelBox').hidden=false; $('channelBtns').innerHTML = chBtns.join(''); }
 
+  // Services, docs, meeting, FAQ
+  $('servicesGrid').innerHTML = C.services.map(s => `
+    <div class="card"><div style="font-size:1.8rem">${s.icon}</div><h3>${esc(s.title)}</h3><p style="color:var(--muted)">${esc(s.text)}</p></div>`).join('');
+  $('docsList').innerHTML = C.documents.map(d => `<li>${esc(d)}</li>`).join('');
+  $('mPlace').textContent = C.meeting.place;
+  $('mHours').innerHTML = C.meeting.hours.map(h => `<div><b>${esc(h[0])}</b><span>${esc(h[1])}</span></div>`).join('');
+  if (C.meeting.mapUrl){ const m=$('mMap'); m.href=C.meeting.mapUrl; m.hidden=false; }
+  $('faqList').innerHTML = C.faq.map(f => `<details><summary>${esc(f[0])}</summary><p>${esc(f[1])}</p></details>`).join('');
+
+  // Form modes
+  let mode = 'wa';
+  const sendBtn = $('sendBtn'), status = $('status');
+  document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(x => x.classList.remove('on'));
+    t.classList.add('on'); mode = t.dataset.mode;
+    sendBtn.textContent = mode === 'wa' ? '💬 افتح الواتساب بالرسالة جاهزة' : '📧 ارسل الرسالة';
+    status.className = 'status';
+  }));
+
+  const buildText = (d) => [
+    'السلام عليكم،',
+    `الاسم: ${d.name}`,
+    `الهاتف: ${d.phone}`,
+    `الصفة: ${d.employee_type}`,
+    `الموضوع: ${d.subject} (${d.priority})`,
+    `الرد المفضل: ${d.preferred_contact} – ${d.best_time}`,
+    '',
+    d.message
+  ].join('\n');
+
+  $('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const f = e.target;
+    const d = Object.fromEntries(new FormData(f).entries());
+    status.className = 'status';
+    if (d.botcheck) return;
+    if (!d.name.trim() || !d.phone.trim() || !d.employee_type || !d.subject || !d.message.trim()){
+      status.className='status err'; status.textContent='المرجو ملء جميع الحقول المطلوبة (*).'; return;
+    }
+    if (!/^[+\d\s().-]{8,20}$/.test(d.phone.trim())){
+      status.className='status err'; status.textContent='رقم الهاتف غير صحيح.'; return;
+    }
+    if (!$('fConsent').checked){
+      status.className='status err'; status.textContent='المرجو الموافقة على الشرط الأخير.'; return;
+    }
+    if (d.preferred_contact === 'إيميل' && !d.email){
+      status.className='status err'; status.textContent='كتبتي أنك بغيتي الرد بالإيميل، المرجو إدخال إيميلك.'; return;
+    }
+    const text = buildText(d);
+
+    if (mode === 'wa'){
+      window.open(waLink(text), '_blank', 'noopener');
+      status.className='status ok'; status.textContent='تم فتح الواتساب. غير ارسل الرسالة من هناك ✔';
+      return;
+    }
+
+    // Email mode via Web3Forms (or mailto fallback)
+    const fallback = () => { location.href = `mailto:${C.email}?subject=${enc(d.subject+' - '+d.name)}&body=${enc(text)}`; };
+    if (!C.web3formsKey || C.web3formsKey.startsWith('YOUR_')){ fallback(); return; }
+    sendBtn.disabled = true; sendBtn.textContent = '...كنصيفط';
+    try{
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify({
+          access_key: C.web3formsKey,
+          subject: `[بوابة المندوب] ${d.subject} – ${d.name}`,
+          from_name: d.name, replyto: d.email || undefined,
+          name: d.name, phone: d.phone, employee_type: d.employee_type,
+          topic: d.subject, priority: d.priority,
+          preferred_contact: d.preferred_contact, best_time: d.best_time,
+          email: d.email || '—', message: d.message
+        })
+      });
+      const j = await res.json();
+      if (j.success){
+        status.className='status ok'; status.textContent='توصلت رسالتك بنجاح ✔ غادي نتواصل معاك قريبا.'; f.reset();
+      } else throw new Error(j.message);
+    }catch(err){
+      status.className='status err';
+      status.innerHTML='وقع خطأ فالإرسال. جرب الواتساب: <a href="'+waLink(text)+'" target="_blank" rel="noopener" style="text-decoration:underline">اضغط هنا</a>';
+    }finally{
+      sendBtn.disabled=false; sendBtn.textContent='📧 ارسل الرسالة';
+    }
+  });
+
+  // Share
+  const msg = `السلام عليكم زملائي الأعزاء 🌹\nفتحت بوابة للتواصل المباشر معايا كمندوب التعاضدية العامة لموظفي الإدارات العمومية لفائدة موظفي جماعة الرباط.\nمن خلالها تقدر تستفسر، تطلب موعد، أو تنقل انشغالاتك.\n👇 الرابط:\n${siteUrl}`;
+  $('shareMsg').textContent = msg;
+  $('copyMsg').addEventListener('click', () => copy(msg, 'تم نسخ الرسالة ✔'));
+  $('shareWa').href = `https://wa.me/?text=${enc(msg)}`;
+  $('shareTg').href = `https://t.me/share/url?url=${enc(siteUrl)}&text=${enc('بوابة التواصل مع مندوب التعاضدية')}`;
+  $('shareFb').href = `https://www.facebook.com/sharer/sharer.php?u=${enc(siteUrl)}`;
+  $('copyLink').addEventListener('click', () => copy(siteUrl, 'تم نسخ الرابط ✔'));
+  $('qrUrl').textContent = siteUrl;
+  if (navigator.share){
+    const b = $('nativeShare'); b.hidden = false;
+    b.addEventListener('click', () => navigator.share({title:'بوابة التواصل مع المندوب', text:msg, url:siteUrl}).catch(()=>{}));
+  }
+  const qrScript = document.createElement('script');
+  qrScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js';
+  qrScript.async = true;
+  qrScript.onload = () => {
+    try { new QRCode($('qr'), {text: siteUrl, width: 180, height: 180, correctLevel: QRCode.CorrectLevel.M}); }
+    catch(e){ $('qr').textContent = 'QR غير متوفر'; }
+  };
+  qrScript.onerror = () => { $('qr').textContent = 'QR غير متوفر'; };
+  document.body.appendChild(qrScript);
+  window.scrollTo(0, 0);
+
+  // Save vCard
+  $('saveContact').addEventListener('click', (e) => {
+    e.preventDefault();
+    const v = ['BEGIN:VCARD','VERSION:3.0',`FN:${C.name}`,`ORG:${C.role}`,`TITLE:مندوب التعاضدية`,
+      `TEL;TYPE=CELL:${C.phone}`,`EMAIL:${C.email}`,`URL:${siteUrl}`,'END:VCARD'].join('\r\n');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([v], {type:'text/vcard;charset=utf-8'}));
+    a.download = 'mandoub.vcf'; document.body.appendChild(a); a.click(); a.remove();
+  });
+})();
+</script>
 </body>
 </html>
