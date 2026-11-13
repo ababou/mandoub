@@ -939,3 +939,32 @@ nav a:hover {
     transition-duration: .01ms !important;
   }
 }
+
+
+/* Fix candidate photo on mobile and desktop */
+
+.photo-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+}
+
+.photo-placeholder {
+  display: none;
+  position: absolute;
+  inset: 10px;
+  z-index: 1;
+}
+
+.photo-label {
+  z-index: 3;
+}
+
