@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="theme-color" content="#0f766e">
+<title>فرز الأصوات</title>
+<style>
+:root{--bg:#f4f6f8;--card:#fff;--ink:#16202a;--mut:#64707d;--pri:#0f766e;--pri2:#ccfbf1;--red:#b91c1c;--red2:#fee2e2;--grn:#15803d;--grn2:#dcfce7;--amb:#b45309;--amb2:#fef3c7;--line:#dde3e9}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;font-size:17px}
+body{padding-bottom:150px;user-select:none;-webkit-user-select:none}
+header{position:sticky;top:0;z-index:5;background:var(--pri);color:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center}
+header h1{font-size:18px;margin:0}
+header .n{font-size:15px;opacity:.95}
+.tabs{display:flex;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:46px;z-index:4}
+.tabs button{flex:1;padding:12px;border:0;background:none;font:inherit;font-weight:600;color:var(--mut);border-bottom:3px solid transparent}
+.tabs button.on{color:var(--pri);border-bottom-color:var(--pri)}
+.grid{display:grid;grid-template-columns:1fr;gap:6px;padding:10px}
+.c{display:flex;align-items:center;gap:8px;background:var(--card);border:2px solid var(--line);border-radius:12px;padding:8px 12px;min-height:52px;font:inherit;color:var(--ink);text-align:right;touch-action:manipulation}
+.c .num{flex:none;width:32px;height:32px;border-radius:50%;background:#e8edf2;display:grid;place-items:center;font-weight:700;font-size:15px}
+.c .nm{font-weight:600;line-height:1.25;font-size:18px}
+.c .box{position:relative;flex:none;width:30px;height:30px;border:3px solid #94a3b0;border-radius:7px;background:#fff;display:grid;place-items:center;font-size:22px;font-weight:900;line-height:1;color:#fff}
+.hand{position:absolute;left:-10px;top:-26px;font-size:30px;line-height:1;pointer-events:none;z-index:3;opacity:0;animation:wr .65s ease-out forwards}
+@keyframes wr{0%{opacity:0;transform:translate(-14px,-10px) rotate(-25deg)}30%{opacity:1;transform:translate(0,0) rotate(0)}50%{opacity:1;transform:translate(5px,5px) rotate(8deg)}70%{opacity:1;transform:translate(0,0) rotate(0)}100%{opacity:0;transform:translate(0,-8px) rotate(0)}}
+.c.sel .box{background:var(--pri);border-color:var(--pri)}
+.c.sel .box::after{content:"✓"}
+.over .c.sel .box{background:var(--red);border-color:var(--red)}
+.c.sel{border-color:var(--pri);background:var(--pri2)}
+.c.sel .num{background:var(--pri);color:#fff}
+.over .c.sel{border-color:var(--red);background:var(--red2)}
+.over .c.sel .num{background:var(--red)}
+.bar{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);padding:8px 10px calc(8px + env(safe-area-inset-bottom));z-index:6}
+.cnt{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;font-weight:700}
+.cnt .k{font-size:20px;padding:2px 12px;border-radius:20px;background:#e8edf2}
+.cnt .k.ok{background:var(--grn2);color:var(--grn)}
+.cnt .k.bad{background:var(--red2);color:var(--red)}
+.row{display:flex;gap:6px}
+.btn{flex:1;border:0;border-radius:12px;padding:13px 6px;font:inherit;font-weight:700;color:#fff;background:var(--pri);touch-action:manipulation}
+.btn.big{flex:2.2;font-size:18px}
+.btn.g{background:#e8edf2;color:var(--ink)}
+.btn.w{background:var(--amb)}
+.btn.r{background:var(--red)}
+.btn:disabled{opacity:.4}
+.last{padding:4px 12px;font-size:14px;color:var(--mut);display:flex;justify-content:space-between;align-items:center}
+.last button{border:0;background:none;color:var(--red);font:inherit;font-weight:700;padding:8px}
+.panel{padding:10px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:10px}
+.st{background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 2px;text-align:center}
+.st b{display:block;font-size:22px}
+.st span{font-size:12px;color:var(--mut)}
+.res{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px;margin-bottom:6px;position:relative;overflow:hidden}
+.res .fill{position:absolute;inset:0 0 0 auto;background:#eef2f6;z-index:0}
+.res.win .fill{background:var(--grn2)}
+.res>div.in{position:relative;z-index:1;display:flex;align-items:center;gap:10px}
+.rk{flex:none;width:30px;height:30px;border-radius:50%;background:#cbd5df;display:grid;place-items:center;font-weight:700;font-size:14px}
+.win .rk{background:var(--grn);color:#fff}
+.res .nm{flex:1;font-weight:600}
+.res .v{font-size:22px;font-weight:800}
+.warn{background:var(--amb2);color:var(--amb);border-radius:10px;padding:10px;margin-bottom:10px;font-weight:600;font-size:15px}
+.hint{font-size:13px;color:var(--mut);margin:8px 2px}
+.acts{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.hide{display:none!important}
+.toast{position:fixed;top:100px;left:50%;transform:translateX(-50%);background:#16202a;color:#fff;padding:9px 18px;border-radius:20px;z-index:20;font-size:15px;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.show{opacity:.95}
+</style>
+</head>
+<body>
+<header><h1>🗳️ فرز الأصوات</h1><div class="n" id="hdr"></div></header>
+<div class="tabs">
+  <button id="t1" class="on">الفرز</button>
+  <button id="t2">النتائج</button>
+</div>
+
+<section id="p1">
+  <div class="last"><span id="lastTxt">لا توجد أوراق بعد</span><button id="undo">↩ تراجع عن آخر ورقة</button></div>
+  <div class="grid" id="grid"></div>
+  <div class="bar">
+    <div class="cnt"><span id="cntLbl">اختر المرشحين (5 كحد أقصى)</span><span class="k" id="cnt">0 / 5</span></div>
+    <div class="row">
+      <button class="btn big" id="save">✔ تسجيل الورقة</button>
+      <button class="btn g" id="clear">مسح</button>
+    </div>
+    <div class="row" style="margin-top:6px">
+      <button class="btn w" id="blank">ورقة بيضاء</button>
+      <button class="btn r" id="void">ورقة ملغاة</button>
+    </div>
+  </div>
+</section>
+
+<section id="p2" class="hide">
+  <div class="panel">
+    <div class="stats">
+      <div class="st"><b id="sT">0</b><span>مجموع الأوراق</span></div>
+      <div class="st"><b id="sV">0</b><span>صحيحة</span></div>
+      <div class="st"><b id="sB">0</b><span>بيضاء</span></div>
+      <div class="st"><b id="sN">0</b><span>ملغاة</span></div>
+    </div>
+    <div id="tie"></div>
+    <div id="list"></div>
+    <div class="hint">الخلفية الخضراء = أعلى 5 أصوات. تُحفظ البيانات تلقائياً في الهاتف.</div>
+    <div class="acts">
+      <button class="btn" id="copy">📋 نسخ النتائج</button>
+      <button class="btn g" id="csv">⬇ تحميل ملف CSV</button>
+      <button class="btn r" id="reset">🗑 بدء فرز جديد (مسح الكل)</button>
+    </div>
+  </div>
+</section>
+<div class="toast" id="toast"></div>
+
+<script>
+var NAMES=["البصائري فريد","عبد الحميد زغود","موجان إسماعيل","بنصحرة سعيد","ايت إبراهيم محمد","شهبون هشام","كاسمي منى","الأحمادي جمال","لعميري بوشعيب","الهراوي كريم","برادة سعيد","تغدا علي","مرشيد يونس","اعبابو محمد","شعواد جلال","ورداني ليلى","برقديش الحسين","الغازي مينة","آيت بريم محمد","الهوبة زكرياء","بوغلاد مصطفى","العسري إبراهيم","خودالي المختار"];
+var SHOW=[10,14,17,22,23];
+NAMES=NAMES.map(function(n,i){return SHOW.indexOf(i+1)>=0?n:"مرشح "+(i+1)});
+var SEATS=5, KEY="farz_ballots_v1";
+var ballots=[], sel=[];
+function load(){try{var r=localStorage.getItem(KEY);if(r)ballots=JSON.parse(r)||[]}catch(e){}}
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(ballots))}catch(e){}}
+function $(i){return document.getElementById(i)}
+function toast(m){var t=$("toast");t.textContent=m;t.className="toast show";clearTimeout(toast.h);toast.h=setTimeout(function(){t.className="toast"},1400)}
+function buzz(n){try{navigator.vibrate&&navigator.vibrate(n)}catch(e){}}
+
+function hand(i){
+  var bx=document.querySelector("#c"+i+" .box");if(!bx)return;
+  var h=document.createElement("span");h.className="hand";h.textContent="✍️";
+  bx.appendChild(h);setTimeout(function(){if(h.parentNode)h.parentNode.removeChild(h)},700);
+}
+function buildGrid(){
+  var g=$("grid");g.innerHTML="";
+  NAMES.forEach(function(n,i){
+    var b=document.createElement("button");b.className="c";b.id="c"+i;
+    b.innerHTML='<span class="num">'+(i+1)+'</span><span class="box"></span><span class="nm">'+n+'</span>';
+    b.onclick=function(){
+      var k=sel.indexOf(i);
+      if(k>=0)sel.splice(k,1);else{if(sel.length>=SEATS){buzz(80);toast("وصلتي 5 — ألغِ اختياراً قبل ما تزيد");return}sel.push(i);hand(i)}
+      buzz(15);renderSel();
+    };
+    g.appendChild(b);
+  });
+}
+function renderSel(){
+  NAMES.forEach(function(_,i){$("c"+i).classList.toggle("sel",sel.indexOf(i)>=0)});
+  var n=sel.length,over=n>SEATS;
+  $("grid").classList.toggle("over",over);
+  var k=$("cnt");k.textContent=n+" / "+SEATS;
+  k.className="k"+(over?" bad":(n>0?" ok":""));
+  $("cntLbl").textContent=over?"⚠ أكثر من 5 — الورقة ملغاة":"اختر المرشحين (5 كحد أقصى)";
+  var s=$("save");
+  s.disabled=(n===0);
+  s.textContent=over?"تسجيل كورقة ملغاة":"✔ تسجيل الورقة";
+  s.className="btn big"+(over?" r":"");
+}
+function addBallot(t,s){
+  ballots.push({t:t,s:s||[]});persist();sel=[];renderSel();renderTop();
+  window.scrollTo(0,0);
+}
+function renderTop(){
+  $("hdr").textContent="الأوراق: "+ballots.length;
+  var l=ballots[ballots.length-1];
+  if(!l){$("lastTxt").textContent="لا توجد أوراق بعد";$("undo").style.visibility="hidden";return}
+  $("undo").style.visibility="visible";
+  var d=l.t==="v"?"آخر ورقة: "+l.s.map(function(i){return i+1}).sort(function(a,b){return a-b}).join(" - "):(l.t==="b"?"آخر ورقة: بيضاء":"آخر ورقة: ملغاة");
+  $("lastTxt").textContent="#"+ballots.length+" — "+d;
+}
+$("save").onclick=function(){
+  if(!sel.length)return;
+  if(sel.length>SEATS){addBallot("x");toast("سُجلت ورقة ملغاة");buzz(60)}
+  else{addBallot("v",sel.slice());toast("تم التسجيل ✔")}
+};
+$("clear").onclick=function(){sel=[];renderSel()};
+$("blank").onclick=function(){addBallot("b");toast("سُجلت ورقة بيضاء")};
+$("void").onclick=function(){addBallot("x");toast("سُجلت ورقة ملغاة")};
+$("undo").onclick=function(){
+  if(!ballots.length)return;
+  if(confirm("حذف آخر ورقة مسجلة؟")){ballots.pop();persist();renderTop();toast("تم التراجع")}
+};
+
+function compute(){
+  var v=new Array(NAMES.length).fill(0),valid=0,bl=0,vo=0;
+  ballots.forEach(function(b){
+    if(b.t==="v"){valid++;b.s.forEach(function(i){v[i]++})}
+    else if(b.t==="b")bl++;else vo++;
+  });
+  return {v:v,valid:valid,bl:bl,vo:vo};
+}
+function ranked(c){
+  var a=NAMES.map(function(n,i){return{i:i,n:n,v:c.v[i]}});
+  a.sort(function(x,y){return y.v-x.v||x.i-y.i});
+  var r=1;a.forEach(function(o,k){if(k>0&&o.v<a[k-1].v)r=k+1;o.r=r});
+  return a;
+}
+function renderRes(){
+  var c=compute(),a=ranked(c);
+  $("sT").textContent=ballots.length;$("sV").textContent=c.valid;$("sB").textContent=c.bl;$("sN").textContent=c.vo;
+  var max=a[0]?a[0].v:0,h="";
+  a.forEach(function(o,k){
+    var win=k<SEATS&&o.v>0,w=max?Math.round(o.v/max*100):0;
+    h+='<div class="res'+(win?" win":"")+'"><div class="fill" style="width:'+w+'%"></div><div class="in"><span class="rk">'+o.r+'</span><span class="nm">'+(o.i+1)+". "+o.n+'</span><span class="v">'+o.v+'</span></div></div>';
+  });
+  $("list").innerHTML=h;
+  var t="";
+  if(a.length>SEATS&&a[SEATS-1].v>0&&a[SEATS-1].v===a[SEATS].v){
+    var tv=a[SEATS-1].v,names=a.filter(function(o){return o.v===tv}).map(function(o){return o.n});
+    t='<div class="warn">⚠ تعادل في المقعد الأخير ('+tv+' صوتاً): '+names.join("، ")+'</div>';
+  }
+  $("tie").innerHTML=t;
+}
+function textReport(){
+  var c=compute(),a=ranked(c);
+  var s="نتائج الفرز\nمجموع الأوراق: "+ballots.length+" | صحيحة: "+c.valid+" | بيضاء: "+c.bl+" | ملغاة: "+c.vo+"\n\n";
+  a.forEach(function(o){s+=o.r+". "+o.n+" (رقم "+(o.i+1)+") : "+o.v+"\n"});
+  return s;
+}
+$("copy").onclick=function(){
+  var s=textReport();
+  function fb(){var ta=document.createElement("textarea");ta.value=s;document.body.appendChild(ta);ta.select();try{document.execCommand("copy");toast("تم النسخ")}catch(e){toast("تعذر النسخ")}document.body.removeChild(ta)}
+  try{navigator.clipboard.writeText(s).then(function(){toast("تم النسخ")},fb)}catch(e){fb()}
+};
+$("csv").onclick=function(){
+  var c=compute(),a=ranked(c),s="\uFEFFالترتيب,رقم المرشح,الاسم,الأصوات\n";
+  a.forEach(function(o){s+=o.r+","+(o.i+1)+","+o.n+","+o.v+"\n"});
+  s+="\nمجموع الأوراق,"+ballots.length+"\nصحيحة,"+c.valid+"\nبيضاء,"+c.bl+"\nملغاة,"+c.vo+"\n";
+  var b=new Blob([s],{type:"text/csv;charset=utf-8"}),u=URL.createObjectURL(b),l=document.createElement("a");
+  l.href=u;l.download="نتائج-الفرز.csv";document.body.appendChild(l);l.click();document.body.removeChild(l);
+  setTimeout(function(){URL.revokeObjectURL(u)},1000);
+};
+$("reset").onclick=function(){
+  if(!ballots.length)return;
+  if(confirm("سيتم مسح كل الأوراق المسجلة. متأكد؟")&&confirm("تأكيد أخير: مسح "+ballots.length+" ورقة نهائياً؟")){
+    ballots=[];persist();sel=[];renderSel();renderTop();renderRes();toast("تم المسح");
+  }
+};
+
+function tab(n){
+  $("p1").classList.toggle("hide",n!==1);$("p2").classList.toggle("hide",n!==2);
+  $("t1").classList.toggle("on",n===1);$("t2").classList.toggle("on",n===2);
+  if(n===2)renderRes();
+  window.scrollTo(0,0);
+}
+$("t1").onclick=function(){tab(1)};$("t2").onclick=function(){tab(2)};
+
+load();buildGrid();renderSel();renderTop();
+</script>
+</body>
+</html>
